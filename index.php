@@ -1,7 +1,12 @@
 <?php 
-
+    session_start();
+    if(isset($_SESSION['name']))
+    {
+      header("Location: templates/tem_home.php");
+    }
     include 'templates/tem_navbar.php';
-  
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +25,7 @@
 
 
 
-<form action="php_config/db_input.php" method="POST">
+<!-- <form action="php_config/db_input.php" method="POST">
   <input type="number" name="num" placeholder="num" ><br>
   <input type="text" name="name" placeholder="name" ><br>
   <input type="text" name="style" placeholder="style" ><br>
@@ -31,30 +36,11 @@
 
 
 
-<a href="templates/tem_login.php">GOTO LOGIN</a>
+ -->
+ <!-- <a href="templates/tem_login.php">GOTO LOGIN</a> -->
 
 
 
-<?php 
-
-
-  // $sql = "select * from cars";
-  // $result = mysqli_query($conn, $sql
-
-
-
-
-
-
-//   $result_check /  ccess";
-//   }
-
-
-
-
-// echo "user";
-
- ?>
 
 
 

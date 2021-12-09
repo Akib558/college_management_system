@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,7 @@
     <title>Profile</title>
 </head>
 <body>
-
+<h1>THIS IS PROFILE OF <?php echo $_SESSION['name'];?></h1>
 
 
 

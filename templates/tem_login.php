@@ -1,4 +1,9 @@
 <?php 
+  session_start();
+  if(isset($_SESSION['name']))
+  {
+    header("Location: templates/tem_home.php");
+  }
     include 'navbar.php';
 ?>
 
@@ -15,28 +20,31 @@
     </style>
 </head>
 <body>
-    
-<div class="wrapper fadeInDown">
-  <div id="formContent">
 
-    <p class="login_reg_head">LOGIN</p>
+<div class="main_div">
+		<div class="div2">
 
-    <!-- Login Form -->
-    <form action="../php_config/db_login.php" method="POST">
-      <input type="text" id="login" class="fadeIn second" name="login_email" placeholder="Email">
-      <input type="text" id="password" class="fadeIn third" name="login_pass" placeholder="Password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-      <br>
+			<p>LOG IN</p>
+			<form action="../php_config/db_login.php" method="POST">
+        <input type="text" class="input_1" name="login_email" placeholder="Email">
+        <input type="text"  class="input_1" name="login_pass" placeholder="Password">
+        <input type="submit" class="sub_btn" value="Log In">
+      </form>
       <p>No account Yet?&nbsp;&nbsp;<a href="../templates/tem_reg.php">Create account</a></p> 
-    </div>
 
-  </div>
+			<!-- <p>Already have an account?&nbsp;&nbsp;<a href="../templates/tem_login.php">Login</a></p>  -->
+
+		
+
+			
+			
+
+
+		</div>
+
+
 </div>
+
 
 
 </body>

@@ -1,23 +1,47 @@
 <?php
 
-include_once 'db_config.php';
 
 
-$name = $_POST['reg_name'];
-$email = $_POST['reg_email'];
-$password = $_POST['reg_pass'];
+
+if(isset($_POST['REGISTER'])){
+  include_once 'db_config.php';
+  $name = $_POST['reg_name'];
+  $email = $_POST['reg_email'];
+  $password = $_POST['reg_pass'];
+
+  if(empty($name) || empty($email) || empty($password))
+  {
+    header("Location: ../templates/tem_reg.php?signup=empty");
+  } 
+  else
+  {
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+      header("Location: ../templates/tem_reg.php?signup=invalidemail");
+    }
+    else
+    {
+      $sql = "insert into reg(name, email, password) values ('$name', '$email', '$password');";
 
 
-echo $name.' '.$email.' '.$password."<br>";
-$sql = "insert into reg(name, email, password) values ('$name', '$email', '$password');";
+      if (mysqli_query($conn, $sql)) {
+          header("Location: ../templates/tem_reg.php?signup=success");
+      //   echo "New record created successfully";
+      } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      }
+    }
 
+  //echo $name.' '.$email.' '.$password."<br>";
+  
 
-if (mysqli_query($conn, $sql)) {
-    header("Location: ../templates/tem_reg.php?signup=success");
-//   echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  }
 }
+else{
+  header("Location: ../templates/tem_reg.php?signup=error");
+}
+
+
+
 
 // $sql2 = "select * from reg";
 // $result = mysqli_query($conn, $sql2);
