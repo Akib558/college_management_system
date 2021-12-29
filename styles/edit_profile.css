@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  .content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+    background-color: rgb(215, 221, 210);
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  
+  
+  .pic{
+    width: 100%;
+  
+  }
+  
+  .pic-in{
+  
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+  
+  }
+  
+  #my-img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+  
+  }
+  
+  .info{
+    text-align: center;
+  }
+  
+  .main-table{
+    width: 100%;
+    table-layout: fixed ;
+  }
+  .main-table tr{
+    height: 100px;
+  }
+  
+  td{
+    height: 30px;
+    /* background-color: red; */
+  }
+
+  input{
+      height: 30px;
+      font-size: 20px;
+      text-align: center;
+  }

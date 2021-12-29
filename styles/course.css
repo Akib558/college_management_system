@@ -1,0 +1,57 @@
+
+.my_nav a{
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+  }
+  
+  
+  
+  .pp{
+      color: rebeccapurple;
+  }
+  
+  #navbar {
+  background-color: #46b3ce;
+  position: fixed;
+  /* top: -50px; */
+  height: 40px;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  text-align: center;
+  align-items: center;
+  }
+  
+  #navbar a {
+  /* float: left; */
+  /* display: block; */
+  color: #f2f2f2;
+  /* height: 100px; */
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+  }
+  
+  #navbar a:hover {
+  background-color: #ddd;
+  color: black;
+  }
+
+
+  .course_info{
+      height: 100%;
+      margin-top: 40px;
+      background-color: red;
+  }
+
+  .main_table{
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+  }
+
+  .main_table tr{
+      height:70px;
+  }

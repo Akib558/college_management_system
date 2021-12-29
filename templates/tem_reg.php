@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-       <?php include '../styles/login.css'; ?>
+       <?php include '../styles/reg.css'; ?>
        <?php include '../styles/index.css'; ?>
     </style>
 </head>
@@ -21,9 +21,30 @@
 
 			<p>REGISTER</p>
 			<form action="../php_config/db_reg.php" method="POST">
-				<input type="text" id="login" class="input_1" name="reg_name" placeholder="Name">
-				<input type="text" id="login" class="input_1" name="reg_email" placeholder="Email">
-				<input type="text" id="password" class="input_1" name="reg_pass" placeholder="Password">
+        <table class="reg_table">
+          <tr>
+            <td><input type="text" id="login" class="input_1" name="reg_f_name" placeholder="First Name"></td>
+            <td><input type="text" id="login" class="input_1" name="reg_l_name" placeholder="Last Name"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="login" class="input_1" name="department" placeholder="Department"></td>
+            <td><input type="text" id="login" class="input_1" name="section" placeholder="Section"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="login" class="input_1" name="blood_group" placeholder="Blood Grpup"></td>
+            <td><input type="text" id="login" class="input_1" name="address" placeholder="Address"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="login" class="input_1" name="reg_email" placeholder="Email"></td>
+            <td><input type="text" id="password" class="input_1" name="reg_pass" placeholder="Password"></td>
+          </tr>
+        </table>
+
+        
+
+				
+				
+				
 				<!-- <input type="submit" class="fadeIn fourth" value="REGISTER"> -->
 				<button type="submit" class="sub_btn" name="REGISTER">REGISTER</button>
 			</form>

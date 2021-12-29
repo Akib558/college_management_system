@@ -1,0 +1,54 @@
+
+/* BASIC */
+
+
+body{
+			background-color: #56BAED;
+		}
+
+		.main_div{
+			margin: auto;
+			align-items: center;
+			height: 100%;
+			width: 100%;
+			/* box-shadow: rebeccapurple; */
+
+		}
+
+		.div2{
+			margin: auto;
+			width: 50%;
+			/* border: 3px solid green; */
+			padding: 10px;
+			text-align: center;
+			background-color: white;
+			box-shadow: 10px 5px 10px 5px hsl(200, 55%, 57%), -10px -5px 10px 5px hsl(200, 55%, 57%);
+			margin-top: 10%;
+		}
+
+		.reg_table{
+			width: 100%;
+		}
+
+		.input_1{
+			/* border-color: red; */
+			margin-top: 5px;
+			margin-bottom: 5px;
+
+			height: 40px;
+			width: 80%;
+			background-color: #F6F6F6;
+			/* border-radius: 30px; */
+		}
+
+		.sub_btn{
+			color: red;
+			width: 70%;
+			height: 40px;
+			margin-top: 20px;
+		}
+
+
+.error{
+  color: red;
+}

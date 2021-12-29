@@ -5,11 +5,19 @@
 
 if(isset($_POST['REGISTER'])){
   include_once 'db_config.php';
-  $name = $_POST['reg_name'];
+  $fname = $_POST['reg_f_name'];
+  $lname = $_POST['reg_l_name'];
+  $department = $_POST['department'];
+  $section = $_POST['section'];
+  $blood_group = $_POST['blood_group'];
+  $address = $_POST['address'];
   $email = $_POST['reg_email'];
   $password = $_POST['reg_pass'];
 
-  if(empty($name) || empty($email) || empty($password))
+  if(empty($fname) ||empty($lname) ||
+    empty($department) ||empty($section) ||
+    empty($blood_group) ||empty($address) ||
+    empty($email) || empty($password))
   {
     header("Location: ../templates/tem_reg.php?signup=empty");
   } 
@@ -20,7 +28,7 @@ if(isset($_POST['REGISTER'])){
     }
     else
     {
-      $sql = "insert into reg(name, email, password) values ('$name', '$email', '$password');";
+      $sql = "insert into reg(fname, lname, department, section, blood_group, address, email, password) values ('$fname', '$lname', '$department', '$section', '$blood_group','$address', '$email', '$password');";
 
 
       if (mysqli_query($conn, $sql)) {

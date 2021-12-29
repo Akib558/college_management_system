@@ -46,7 +46,7 @@
             echo '<a href="templates/tem_login.php">Login</a>';
           }
           else{
-            echo "<a href='tem_profile.php'>".$_SESSION['name']."</a>";
+            echo "<a href='tem_profile.php'>".$_SESSION['fname']."</a>";
 
             // echo $_SESSION['name'];
           }
