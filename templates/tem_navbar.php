@@ -36,17 +36,35 @@
       
 
 <div class="header">
-    <a href="#default" class="logo">PLANT'S DOCTOR</a>
+    <a href="#default" class="logo">Random College</a>
     <div class="header-right">
       <!-- <a href="templates/tem_login.php"> -->
      
         <?php
           if(!isset($_SESSION['email']))
-          {
+          { 
+
             echo '<a href="templates/tem_login.php">Login</a>';
+            
           }
           else{
-            echo "<a href='tem_profile.php'>".$_SESSION['fname']."</a>";
+            $position = $_SESSION['position'];
+            
+            if($position == 'admin')
+            {
+              echo "<a href='tem_admin_profile.php'>".$_SESSION['fname']."</a>";
+              
+            }
+            else if($position == 'teacher')
+            {
+              echo "<a href='tem_tea_profile.php'>".$_SESSION['fname']."</a>";
+            }
+            else{
+              echo "<a href='tem_profile.php'>".$_SESSION['fname']."</a>";
+
+            }
+
+
 
             // echo $_SESSION['name'];
           }
@@ -73,10 +91,9 @@
     <div class="my_nav" style="background-color: #46b3ce; height: 50px; width: 100%; text-align: center; margin: 0;">
         <div style="padding-top: 12px;">
         
-            <a href="#sec-11" style="padding-left: 10px; color: white;">Intro</a>
-            <a href="#sec-22" style="padding-left: 40px; color: white;">Preictions</a>
-            <a href="#sec-3" style="padding-left: 40px; color: white;">How to use</a>
-            <a href="#sec-4" style="padding-left: 40px; color: white;">Helps</a>
+            <a href="#sec-11" style="padding-left: 10px; color: white;">Home</a>
+            <a href="#sec-22" style="padding-left: 40px; color: white;">Academic</a>
+            <a href="#sec-3" style="padding-left: 40px; color: white;">Notice Board</a>
         
         </div>
         </div>

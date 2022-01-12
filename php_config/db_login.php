@@ -6,6 +6,15 @@ include_once 'db_config.php';
 $email = $_POST['login_email'];
 $password = $_POST['login_pass'];
 
+if($email == 'admin@gmail.com' && $password == 'noadmin')
+{
+  $_SESSION['email'] = "admin@gmail.com";
+  $_SESSION['fname'] = "admin";
+  $position = "admin";
+  $_SESSION['position'] = $position;
+  header("Location: ../templates/tem_home.php?signup=success");
+  
+}
 
 // echo $num."  ".$name."  ".$style."  ".$year."<br>";
 $sql = "select * from reg where email = '$email' and password = '$password';";
@@ -23,6 +32,7 @@ $blood_grop = $row_data['blood_group'];
 $address = $row_data['address'];
 $email = $row_data['email'];
 $password = $row_data['password'];
+$position = $row_data['position'];
 
 
 if($result_check <= 0)
@@ -41,10 +51,20 @@ else
   $_SESSION['address'] = $address;
   $_SESSION['email'] = $email;
   $_SESSION['password'] = $password;
-
-
+  $_SESSION['position'] = $position;
+  
   header("Location: ../templates/tem_home.php?signup=success");
-
+  // if($position == 'student')
+  // {
+  // }
+  // else if($position == 'teacher')
+  // {
+  //   header("Location: ../templates/tem_home.php?signup=success");
+  // }
+  // else if($position == 'admin')
+  // {
+    
+  // }
   // while($row = mysqli_fetch_assoc($result))
   // {
   //   // echo $row['email']."  ".$row['password']."<br>";
