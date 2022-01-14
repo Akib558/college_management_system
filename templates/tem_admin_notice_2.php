@@ -80,62 +80,87 @@ tr{
             <a href="tem_admin_notice_2.php">Edit Notice</a>
             <a href="tem_admin_notice_3.php">Add Notice</a>
             <a href="tem_admin_notice_4.php">Delete Notice</a>
-
         </div>
     <div class="new_content">
 
-    <?php
-      session_start();
+    <form action="tem_admin_notice_2.php" method="POST">
+      <input type="text" name="board_id">
+      <button style="margin-top: 50px;" type="submit" class="sub_btn"
+                                name="REGISTER">REGISTER</button>
+      </form>
+      <hr>
 
+<?php
+    if(isset($_POST['REGISTER']))
+    {
+      // $_SESSION['tem_value'] = 1;
       $db_servername = "localhost";
       $db_username = "user2";
       $db_password = "passuser2";
       $db_name = "db1";
-
       $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
-
-      $sql = "select * from board";
       
-     
+      $value = $_POST['board_id'];
+
+      // $sql = "select * from teacher_info where teacher_id='$value'";
+      $sql = "select * from board where board_id='$value'";
 
       if(mysqli_query($conn, $sql))
       {
           $result = mysqli_query($conn, $sql);
-          echo "SUCCESS";
-          while($row = mysqli_fetch_assoc($result))
-          {
-            $board_id = $row['board_id'];
-            $board_name = $row['board_name'];
-            $board_date = $row['board_date'];
-            $board_desc = $row['board_desc'];
-            // echo $board_description;
-            echo "
-            <button type='button' class='collapsible'>$board_name &nbsp&nbsp&nbsp $board_date</button>
-            <div class='content2'>
+          $row = mysqli_fetch_assoc($result);
 
-             $board_desc
-                
-            </div>";
+        $board_id = $row['board_id'];
+        $board_name = $row['board_name'];                                       
+        $board_date = $row['board_date'];
+        $board_desc = $row['board_desc'];
+                                //    board_description
 
+        echo "
+            
+            <div class='info'>
+            <form action='../php_config/db_admin_notice_2.php' method='POST'>
+                <table class='main-table'>
+                    <tr>
 
-          }
+                        <td><input type='text' id='login' class='input_1' name='board_id'
+                                placeholder='$board_id' value='$board_id'></td>
+                    </tr>
+                    <tr>
+                        <td><input type='text' id='login' class='input_1' name='board_name'
+                                placeholder='$board_name' value='$board_name'></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><input type='text' id='login' class='input_1' name='board_date'
+                                placeholder='$board_date' value='$board_date'></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><input type='text' id='login' class='input_1' name='board_desc' style='height:200px; width:100%'
+                                placeholder='$board_desc' value='$board_desc'></td>
+                        
+                    </tr>
+                   
+                </table>
+
+                <button type='submit' class='sub_btn' name='REGISTER'>REGISTER</button>
+            </form>
+          
+        </div>
+            
+            
+            ";
       }
-      else{
-        echo "ERROR : ".mysqli_error($conn);
-      }
-  
-  ?>
+    }
 
+?>
 
+    
+    
+    </div>
 
-
-
-
-
-
-
-
-<script>
+    <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -151,6 +176,7 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
+
 
 </body>
 </html>

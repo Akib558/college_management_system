@@ -84,73 +84,53 @@ tr{
         </div>
     <div class="new_content">
 
-    <?php
-      session_start();
+    <form action="tem_admin_notice_4.php" method="POST">
+      <input type="text" name="board_id">
+      <button style="margin-top: 50px;" type="submit" class="sub_btn"
+                                name="REGISTER">REGISTER</button>
+      </form>
+      <hr>
 
-      $db_servername = "localhost";
-      $db_username = "user2";
-      $db_password = "passuser2";
-      $db_name = "db1";
 
-      $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
+      <?php
 
-      $sql = "select * from board";
-      
-     
+            if(isset($_POST['REGISTER']))
+            {
+            $_SESSION['tem_value'] = 1;
+            $db_servername = "localhost";
+            $db_username = "user2";
+            $db_password = "passuser2";
+            $db_name = "db1";
+            $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
+            
+            $value = $_POST['board_id'];
 
-      if(mysqli_query($conn, $sql))
-      {
-          $result = mysqli_query($conn, $sql);
-          echo "SUCCESS";
-          while($row = mysqli_fetch_assoc($result))
-          {
-            $board_id = $row['board_id'];
-            $board_name = $row['board_name'];
-            $board_date = $row['board_date'];
-            $board_desc = $row['board_desc'];
-            // echo $board_description;
-            echo "
-            <button type='button' class='collapsible'>$board_name &nbsp&nbsp&nbsp $board_date</button>
-            <div class='content2'>
+            $sql = "delete from board where board_id='$value'";
 
-             $board_desc
+
+
+
+            if(mysqli_query($conn, $sql))
+            {
                 
-            </div>";
-
-
-          }
-      }
-      else{
-        echo "ERROR : ".mysqli_error($conn);
-      }
-  
-  ?>
+                echo "SUCCESS";
+                
+            }
+            else{
+                echo "ERROR : ".mysqli_error($conn);
+            }
 
 
 
+            
 
 
+            }
+
+      ?>
 
 
-
-
-
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
+    </div>
 
 </body>
 </html>
