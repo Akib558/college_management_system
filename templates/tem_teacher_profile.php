@@ -1,15 +1,18 @@
 <?php
     session_start();
 
-  $fname = $_SESSION['fname'];
-  $lname = $_SESSION['lname'];
-  $department = $_SESSION['department'];
-  $section = $_SESSION['section'];
-  $blood_grop = $_SESSION['blood_group'];
-  $address = $_SESSION['address'];
-  $email = $_SESSION['email'];
-  $password = $_SESSION['password'];
-  
+  $teacher_id =   $_SESSION['teacher_id'];
+  $teacher_name =   $_SESSION['teacher_name'];    
+  $teacher_phone =   $_SESSION['teacher_phone'];   
+  $teacher_dept =   $_SESSION['teacher_dept'] ; 
+  $teacher_email =   $_SESSION['teacher_email'];   
+  $teacher_password =   $_SESSION['teacher_password'];
+    
+    
+    
+    
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -24,11 +27,11 @@
 
 <div class="sidebar">
   <a href="tem_home.php">Main Menu</a>
-  <a class="active" href="tem_profile.php">Home</a>
-  <a href="tem_edit_profile.php">Edit Profile</a>
-  <a href="tem_courses.php">Courses</a>
-  <a href="tem_education.php">Educational Records</a>
-  <a href="tem_fees.php">Fees</a>
+  <a class="active" href="tem_teacher_profile.php">Home</a>
+  <a href="tem_teacher_edit_profile.php">Edit Profile</a>
+  <a href="tem_teacher_course.php">Courses</a>
+  <a href="tem_teacher_education.php">Educational Records</a>
+
  
 </div>
 
@@ -46,20 +49,17 @@
       <tr>
         <?php
          
-          echo "<td>$fname</td><td>$lname</td>" 
+          echo "<td>$teacher_id</td><td>$teacher_name</td>" 
         ?>
         
       </tr>
       <tr>
-        <?php echo "<td>$department</td><td>$section</td>" ?>
+        <?php echo "<td>$teacher_phone</td><td>$teacher_dept</td>" ?>
 
       </tr>
+    
       <tr>
-        <?php echo "<td>$blood_grop</td><td>$address</td>" ?>
-
-      </tr>
-      <tr>
-      <?php echo "<td>$email</td><td>$password</td>" ?>
+      <?php echo "<td>$teacher_email</td><td>$teacher_password</td>" ?>
 
       </tr>
       <tr></tr>

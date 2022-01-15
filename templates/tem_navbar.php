@@ -57,7 +57,7 @@
             }
             else if($position == 'teacher')
             {
-              echo "<a href='tem_tea_profile.php'>".$_SESSION['fname']."</a>";
+              echo "<a href='tem_teacher_profile.php'>".$_SESSION['teacher_name']."</a>";
             }
             else{
               echo "<a href='tem_profile.php'>".$_SESSION['fname']."</a>";

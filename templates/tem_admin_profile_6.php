@@ -42,18 +42,19 @@
 <div class="content">
     
 <div id="navbar">
-<a href="tem_admin_profile.php">Teachers Info</a>
+            <a href="tem_admin_profile.php">Teachers Info</a>
             <a href="tem_admin_profile_2.php">Edit Teachers</a>
             <a href="tem_admin_profile_3.php">Add</a>
             <a href="tem_admin_profile_4.php">Remove Teacher</a>
             <a href="tem_admin_profile_5.php">Add Courses to Teacher</a>
             <a href="tem_admin_profile_6.php">Remove Courses from Teacher</a>
+
         
         </div>
     
   <div class="new_content">
     
-  <form action="tem_admin_profile_5.php" method="POST">
+  <form action="tem_admin_profile_6.php" method="POST">
       <input type="text" name="teacher_id" placeholder="Teacher ID">
       <input type="text" name="course_id" placeholder="Course ID">
 
@@ -79,8 +80,8 @@
         $value = $_POST['teacher_id'];
         $value2 = $_POST['course_id'];
 
-        $sql = "insert into teacher_courses(teacher_course_name, teacher_id) values ('$value2', '$value');";
-
+        // $sql = "insert into teacher_courses(teacher_course_name, teacher_id) values ('$value2', '$value');";
+        $sql = "delete from teacher_courses where teacher_course_name='$value2' and teacher_id='$value';";
 
 
 
@@ -91,7 +92,8 @@
           
         }
         else{
-          echo "ERROR : ".mysqli_error($conn);
+          echo "ERROR : ".mysqli_error($conn)."<br>";
+          echo $sql;
         }
 
 

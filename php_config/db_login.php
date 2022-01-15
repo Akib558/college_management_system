@@ -20,10 +20,23 @@ if($email == 'admin@gmail.com' && $password == 'noadmin')
 
 // echo $num."  ".$name."  ".$style."  ".$year."<br>";
 $sql = "select * from reg where email = '$email' and password = '$password';";
-
+$sql2 = "select * from teacher_info where teacher_email = '$email' and password = '$password';";
 
 $result = mysqli_query($conn, $sql);
+$row = mysqli_num_rows($result);
 $row_data = mysqli_fetch_assoc($result);
+
+
+$result2 = mysqli_query($conn,$sql2);
+$row2 = mysqli_num_rows($result2);
+$row_data = mysqli_fetch_assoc($result2);
+
+
+if($row >= 1)
+{
+  $result = mysqli_query($conn, $sql);
+$row_data = mysqli_fetch_assoc($result);
+
 
 $fname = $row_data['fname'];
 $lname = $row_data['lname'];
@@ -35,44 +48,62 @@ $email = $row_data['email'];
 $password = $row_data['password'];
 $position = $row_data['position'];
 
+$_SESSION['fname'] = $fname;
+$_SESSION['lname'] = $lname;
+$_SESSION['department'] = $department;
+$_SESSION['section'] = $section;
+$_SESSION['blood_group'] = $blood_grop;
+$_SESSION['address'] = $address;
+$_SESSION['email'] = $email;
+$_SESSION['password'] = $password;
+$_SESSION['position'] = $position;
 
-if($result_check <= 0)
-{
-   echo "DATA NOT FOUND";
+$_SESSION['valid'] = 1;
+echo "SUCCESS22222<br>";
+echo $sql;
+
+
+header("Location: ../templates/tem_home.php?signup=success");
+
 }
-else
+else if($row2 >= 1)
 {
-  echo $email;
+  $result = mysqli_query($conn, $sql2);
+$row_data = mysqli_fetch_assoc($result);
 
-  $_SESSION['fname'] = $fname;
-  $_SESSION['lname'] = $lname;
-  $_SESSION['department'] = $department;
-  $_SESSION['section'] = $section;
-  $_SESSION['blood_group'] = $blood_grop;
-  $_SESSION['address'] = $address;
-  $_SESSION['email'] = $email;
-  $_SESSION['password'] = $password;
-  $_SESSION['position'] = $position;
-  
-  $_SESSION['valid'] = 1;
+$teacher_id = $row_data['teacher_id'];
+$teacher_name = $row_data['teacher_name'];
+$teacher_phone = $row_data['teacher_phone'];
+$teacher_dept = $row_data['teacher_dept'];
+$teacher_email = $row_data['teacher_email'];
+$teacher_password = $row_data['password'];
 
-  header("Location: ../templates/tem_home.php?signup=success");
-  // if($position == 'student')
-  // {
-  // }
-  // else if($position == 'teacher')
-  // {
-  //   header("Location: ../templates/tem_home.php?signup=success");
-  // }
-  // else if($position == 'admin')
-  // {
-    
-  // }
-  // while($row = mysqli_fetch_assoc($result))
-  // {
-  //   // echo $row['email']."  ".$row['password']."<br>";
-  // }
+
+$_SESSION['teacher_id']       = $teacher_id;
+$_SESSION['teacher_name']     = $teacher_name;
+$_SESSION['teacher_phone']    = $teacher_phone;
+$_SESSION['teacher_dept']     = $teacher_dept;
+$_SESSION['teacher_email']    = $teacher_email;
+$_SESSION['teacher_password'] = $teacher_password;
+
+$_SESSION['position'] = "teacher";
+$_SESSION['valid'] = 1;
+
+
+// echo "SUCCESS";
+
+
+
+header("Location: ../templates/tem_home.php?signup=success");
+
 }
+else{
+  echo "NO DATA FOUND";
+}
+
+
+
+
 
 
 
