@@ -9,6 +9,9 @@
             $teacher_name = $_POST['teacher_name'];
             $teacher_phone = $_POST['teacher_phone'];
             $teacher_dept = $_POST['teacher_dept'];
+            $teacher_email = $_POST['teacher_email'];
+            $teacher_password = $_POST['teacher_password'];
+
 
             $value = $_SESSION['teacher_id_value'];
 
@@ -19,7 +22,7 @@
             $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
             
 
-            $sql = "update teacher_info set teacher_id='$teacher_id',teacher_name='$teacher_name', teacher_phone='$teacher_phone',teacher_dept='$teacher_dept' where teacher_id='$value'";
+            $sql = "update teacher_info set teacher_id='$teacher_id',teacher_name='$teacher_name', teacher_phone='$teacher_phone',teacher_dept='$teacher_dept', teacher_email='$teacher_email', password='$teacher_password' where teacher_id='$value'";
 
             if(mysqli_query($conn, $sql))
             {

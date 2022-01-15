@@ -107,12 +107,13 @@ tr{
             <a href="tem_admin_fee_3.php">Add Month</a>
 
 
+
         </div>
     <div class="new_content">
 
     <div class="form_section">
 
-            <form action="tem_admin_fee.php" method="POST">
+            <form action="tem_admin_fee_2.php" method="POST">
 
                 <table>
 
@@ -151,6 +152,7 @@ tr{
 
 
       <?php
+      session_start();
       
       if(isset($_POST['REGISTER']))
       {
@@ -175,6 +177,8 @@ tr{
         //   $semester = $_POST['semester'];
         //   $session = $_POST['session'];
 
+        $_SESSION['fee_email'] = $email;
+
         $sql = "show columns from fee";
         $fee_name = array();
 
@@ -184,7 +188,7 @@ tr{
           $i = 0;
           while($row = mysqli_fetch_assoc($result))
           {
-              if($row['Field'] != 'student_email')
+              if($i >= 1)
               {
                 array_push($fee_name,$row['Field']);
               }
@@ -201,7 +205,10 @@ tr{
         $row = mysqli_fetch_assoc($result);
         $row2 = mysqli_fetch_assoc($result2);
 
-        echo "<table>
+        echo "
+        <form action='../php_config/db_admin_fee_2.php' method='POST'>
+        
+        <table>
         <tr>
         <td><u>Month</u></td>
         <td><u>Fee</u></td>
@@ -212,18 +219,28 @@ tr{
         for($i = 0; $i < count($fee_name); $i++)
         {
             $month = $fee_name[$i];
+            $month2 = $month."1";
             $pp = $row[$month];
             $pp2 = $row2[$month];
 
             echo "
             <tr>
                 <td>$month</td>
-                <td>$pp</td>
-                <td>$pp2</td>
+                <td><input type='text' style='width: 100%' placeholder='$pp' value='$pp' name='$month'></td>
+                <td><input type='text' style='width: 100%' placeholder='$pp2' value='$pp2' name='$month2'></td>
             </tr>
                     
             ";
         }
+        echo "
+                     <tr>
+                      <td></td>
+                      <td><button style='margin-top: 50px;' type='submit' class='sub_btn'
+                      name='REGISTER'>REGISTER</button></td>
+                      <td></td>
+                    </tr>
+            </table></form>
+        ";
 
        }
     }

@@ -41,7 +41,7 @@
       <!-- <a href="templates/tem_login.php"> -->
      
         <?php
-          if(!isset($_SESSION['email']))
+          if(!isset($_SESSION['valid']))
           { 
 
             echo '<a href="templates/tem_login.php">Login</a>';
@@ -72,7 +72,7 @@
       
       <a href="tem_session_remove.php">
         <?php
-          if(isset($_SESSION['email']))
+          if(isset($_SESSION['valid']))
           {
             echo "Logout";
           }

@@ -12,6 +12,8 @@ if($email == 'admin@gmail.com' && $password == 'noadmin')
   $_SESSION['fname'] = "admin";
   $position = "admin";
   $_SESSION['position'] = $position;
+  $_SESSION['valid'] = 1;
+
   header("Location: ../templates/tem_home.php?signup=success");
   
 }
@@ -21,7 +23,6 @@ $sql = "select * from reg where email = '$email' and password = '$password';";
 
 
 $result = mysqli_query($conn, $sql);
-$result_check = mysqli_num_rows($result);
 $row_data = mysqli_fetch_assoc($result);
 
 $fname = $row_data['fname'];
@@ -53,6 +54,8 @@ else
   $_SESSION['password'] = $password;
   $_SESSION['position'] = $position;
   
+  $_SESSION['valid'] = 1;
+
   header("Location: ../templates/tem_home.php?signup=success");
   // if($position == 'student')
   // {

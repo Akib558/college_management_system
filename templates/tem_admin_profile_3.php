@@ -70,6 +70,12 @@
                         <td><input type='text' id='login' class='input_1' name='teacher_dept'
                                 placeholder='Teacher Department' ></td>
                     </tr>
+                    <tr>
+                        <td><input type='text' id='login' class='input_1' name='teacher_email'
+                                placeholder='Teacher Email'></td>
+                        <td><input type='text' id='login' class='input_1' name='teacher_password'
+                                placeholder='Teacher Password' ></td>
+                    </tr>
                     
                 
                 </table>

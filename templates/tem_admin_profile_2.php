@@ -100,6 +100,9 @@
             $teacher_name = $data['teacher_name'];
             $teacher_phone = $data['teacher_phone'];
             $teacher_dept = $data['teacher_dept'];
+            $teacher_email = $data['teacher_email'];
+            $teacher_password = $data['password'];
+
 
             if(isset($_SESSION['tem_value']))
             {
@@ -127,7 +130,13 @@
                                 placeholder='$teacher_dept' value='$teacher_dept'></td>
                     </tr>
                     
-                
+                    <tr>
+                        <td><input type='text' id='login' class='input_1' name='teacher_email'
+                                placeholder='$teacher_email' value='$teacher_email'></td>
+                        <td><input type='text' id='login' class='input_1' name='teacher_password'
+                                placeholder='$teacher_password' value='$teacher_password'></td>
+                    </tr>
+
                 </table>
 
                 <button type='submit' class='sub_btn' name='REGISTER'>REGISTER</button>

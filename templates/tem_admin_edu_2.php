@@ -111,7 +111,7 @@ tr{
 
     <div class="form_section">
 
-            <form action="tem_admin_edu.php" method="POST">
+            <form action="tem_admin_edu_2.php" method="POST">
 
                 <table>
 
@@ -185,9 +185,10 @@ tr{
       <hr>
 
 
-
       <?php
-      
+
+        session_start();
+
       if(isset($_POST['REGISTER']))
       {
         $db_servername = "localhost";
@@ -211,6 +212,12 @@ tr{
           $semester = $_POST['semester'];
           $session = $_POST['session'];
 
+          $_SESSION['db_admin_edu_email']    = $email;
+          $_SESSION['db_admin_edu_year']     = $year;
+          $_SESSION['db_admin_edu_semester'] = $semester;
+          $_SESSION['db_admin_edu_session']    = $session;
+
+
           if($department == "CSE")
           {
             $sql = "show columns from education_cse";
@@ -222,11 +229,8 @@ tr{
               $i = 0;
               while($row = mysqli_fetch_assoc($result))
               {
-                  if($i >= 4)
-                  {
                     array_push($course_name,$row['Field']);
-                  }
-                  $i++;
+               
               }
             }
             else{
@@ -239,20 +243,109 @@ tr{
             {
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo "<table>";
+              echo "
+              <form action='../php_config/db_admin_edu_2.php' method='POST'>
+              <table>";
               for($i = 0; $i < count($course_name); $i++)
               {
                 $pp = $course_name[$i];
                 $pp2 = $row[$pp];
-                  echo "
+                if($i == 0)
+                {
+                    echo "
                     <tr>
                       <td>$pp</td>
-                      <td>$pp2</td>
+                      <td colspan='2'><input type='text' style='width: 100%' placeholder='$pp2' value='$pp2' name='$pp'>
+                      </td>
                     </tr>
                   
                   ";
+                }
+                else if($i == 1)
+                {
+                    echo "
+                    <tr>
+                      <td>$pp</td>
+    <td style='background-color: white;'>$pp2</td>
+                      
+
+                      <td>
+                      <select id='year' class='input_class' name='$pp'>
+                                <option value='$pp2' selected>Choose a Year</option>
+                                <option value='1y'>First Year</option>
+                                <option value='2y'>Second Year</option>
+                                <option value='3y'>Third Year</option>
+                                <option value='4y'>Fourth Year</option>
+                            </select>
+                      </td>
+                    </tr>
+                  
+                  ";
+                }
+                else if($i == 2)
+                {
+                    echo "
+                    <tr>
+                      <td>$pp</td>
+    <td style='background-color: white;'>$pp2</td>
+                      
+
+                      <td>
+                      <select id='semester' class='input_class' name='$pp'>
+                      <option value='$pp2' selected>Choose a Semesterr</option>
+                      <option value='1s'>First Semester</option>
+                      <option value='2s'>Second Semester</option>
+                      <option value='3s'>Third Semester</option>
+                      <option value='4s'>Fourth Semester</option>
+                  </select>
+                      </td>
+                    </tr>
+                  
+                  ";
+                }
+                else if($i == 3)
+                {
+                    echo "
+                    <tr>
+                      <td>$pp</td>
+    <td style='background-color: white;'>$pp2</td>
+                      
+
+                      <td>
+                      <select id='session' class='input_class' name='$pp'>
+                                <option value='$pp2' selected>Choose a Session</option>
+                                <option value='15_16'>2015-2016</option>
+                                <option value='16_17'>2016-2017</option>
+                                <option value='17_18'>2017-1018</option>
+                                <option value='18_19'>2018-2019</option>
+                            </select>
+                      </td>
+                    </tr>
+                  
+                  ";
+                }
+                else{
+                    echo "
+                    <tr>
+                      <td>$pp</td>
+                      <td colspan='2'><input type='text' style='width: 100%' placeholder='$pp2' value='$pp2' name='$pp'>
+                      </td>
+                    </tr>
+                  
+                  ";
+                }
+                  
               }
-              echo "</table>";
+              echo "
+              <tr>
+                      <td></td>
+                      <td><button style='margin-top: 50px;' type='submit' class='sub_btn'
+                      name='REGISTER'>REGISTER</button></td>
+                      <td></td>
+                    </tr>
+              </table>
+             
+              </form>";
             }
             else{
               echo "ERROR IS GETIING RESULT FROM education_cse";
@@ -295,48 +388,7 @@ tr{
       ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-    
     </div>
-
-    <script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
-
 
 </body>
 </html>
