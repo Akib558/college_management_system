@@ -102,7 +102,7 @@ tr{
     
 <div id="navbar">
 
-<a href="tem_admin_edu.php">Get Info</a>
+<a style="background-color: #2bff00;" href="tem_admin_edu.php">Get Info</a>
             <a href="tem_admin_edu_2.php">Update Info</a>
             <a href="tem_admin_edu_3.php">Insert New Student</a>
            
@@ -168,7 +168,7 @@ tr{
                         <td></td>
                         <td>
                             <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Get Info</button>
                         </td>
                         <td></td>
 
@@ -239,7 +239,7 @@ tr{
             {
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
-              echo "<table>";
+              echo "<div class='info'><table class='main-table'>";
               for($i = 0; $i < count($course_name); $i++)
               {
                 $pp = $course_name[$i];
@@ -252,7 +252,7 @@ tr{
                   
                   ";
               }
-              echo "</table>";
+              echo "</table></div>";
             }
             else{
               echo "ERROR IS GETIING RESULT FROM education_cse";

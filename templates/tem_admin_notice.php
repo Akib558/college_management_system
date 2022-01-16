@@ -76,7 +76,7 @@ tr{
     
 <div id="navbar">
 
-<a href="tem_admin_notice.php">Notices</a>
+<a style="background-color: #2bff00;" href="tem_admin_notice.php">Notices</a>
             <a href="tem_admin_notice_2.php">Edit Notice</a>
             <a href="tem_admin_notice_3.php">Add Notice</a>
             <a href="tem_admin_notice_4.php">Delete Notice</a>
@@ -101,7 +101,7 @@ tr{
       if(mysqli_query($conn, $sql))
       {
           $result = mysqli_query($conn, $sql);
-          echo "SUCCESS";
+          // echo "SUCCESS";
           while($row = mysqli_fetch_assoc($result))
           {
             $board_id = $row['board_id'];
@@ -110,7 +110,7 @@ tr{
             $board_desc = $row['board_desc'];
             // echo $board_description;
             echo "
-            <button type='button' class='collapsible'>$board_name &nbsp&nbsp&nbsp $board_date</button>
+            <button type='button' class='collapsible kk-btn'><p class='kk'>$board_name &nbsp&nbsp&nbsp $board_date</p></button>
             <div class='content2'>
 
              $board_desc
@@ -129,7 +129,7 @@ tr{
 
 
 
-
+    </div>
 
 
 

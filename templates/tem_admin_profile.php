@@ -75,13 +75,14 @@ tr{
 <div class="content">
     
 <div id="navbar">
-
-            <a href="tem_admin_profile.php">Teachers Info</a>
+            <a style="background-color: #2bff00;" href="tem_admin_profile.php">Teachers Info</a>
             <a href="tem_admin_profile_2.php">Edit Teachers</a>
-            <a href="tem_admin_profile_3.php">Add</a>
+            <a href="tem_admin_profile_3.php">Add Teacher</a>
             <a href="tem_admin_profile_4.php">Remove Teacher</a>
             <a href="tem_admin_profile_5.php">Add Courses to Teacher</a>
+            <a  href="tem_admin_profile_6.php">Remove Courses from Teacher</a>
 
+        
         </div>
     <div class="new_content">
 
@@ -102,7 +103,7 @@ tr{
       if(mysqli_query($conn, $sql))
       {
           $result = mysqli_query($conn, $sql);
-          echo "SUCCESS";
+          // echo "SUCCESS";
           while($row = mysqli_fetch_assoc($result))
           {
             $teacher_id = $row['teacher_id'];
@@ -121,7 +122,8 @@ tr{
             
 
             echo "
-            <button type='button' class='collapsible'>$teacher_name</button>
+        
+            <button type='button' class='collapsible kk-btn'><p class='kk'>$teacher_name</p></button>
             <div class='content2'>
                 <table class='demo_table'>
                 <tr>
@@ -132,11 +134,13 @@ tr{
                   <td>Teacher Phone : $teacher_phone</td>
                   <td>Teacher Department : $teacher_dept</td>
                 </tr>
-                <tr>
-              </table>";
-              echo "COURSES : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+                <tr colspan='2'><td>";
+                echo "COURSES : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
               for($i = 0; $i < count($course); $i++){echo strtoupper($course[$i])."&nbsp&nbsp&nbsp&nbsp&nbsp";}
-              echo "</div>";
+
+
+
+              echo "</td></tr></table></div>";
 
 
           }

@@ -104,7 +104,7 @@ tr{
             
             <a href="tem_admin_fee.php">Get Info</a>
             <a href="tem_admin_fee_2.php">Update Info</a>
-            <a href="tem_admin_fee_3.php">Add Month</a>
+            <a style="background-color: #2bff00;" href="tem_admin_fee_3.php">Add Month</a>
 
         </div>
     <div class="new_content">
@@ -142,7 +142,7 @@ tr{
                         <td></td>
                         <td>
                             <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Add Month</button>
                         </td>
                         <td></td>
 

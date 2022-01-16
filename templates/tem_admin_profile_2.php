@@ -43,23 +43,31 @@
     
 <div id="navbar">
             <a href="tem_admin_profile.php">Teachers Info</a>
-            <a href="tem_admin_profile_2.php">Edit Teachers</a>
-            <a href="tem_admin_profile_3.php">Add</a>
+            <a style="background-color: #2bff00;" href="tem_admin_profile_2.php">Edit Teachers</a>
+            <a href="tem_admin_profile_3.php">Add Teacher</a>
             <a href="tem_admin_profile_4.php">Remove Teacher</a>
             <a href="tem_admin_profile_5.php">Add Courses to Teacher</a>
+            <a  href="tem_admin_profile_6.php">Remove Courses from Teacher</a>
+
         
         </div>
     
   <div class="new_content">
-    
+  
+  <div class="inner_new_content">
   <form action="tem_admin_profile_2.php" method="POST">
-      <input type="text" name="teacher_id">
+      <input type="text" name="teacher_id" placeholder="Teacher Id">
+      
       <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Get Info</button>
+                                
       <!-- <button type="submit" class="sub_btn" name="search">SEARCH</button> -->
 
   </form>
 
+</div>
+
+  
   <hr>
 
 
@@ -139,7 +147,7 @@
 
                 </table>
 
-                <button type='submit' class='sub_btn' name='REGISTER'>REGISTER</button>
+                <button type='submit' class='sub_btn' name='REGISTER'>Update Info</button>
             </form>
 
         </div>

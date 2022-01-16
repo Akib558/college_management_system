@@ -19,7 +19,7 @@ $password = $_SESSION['password'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education Information</title>
     <style>
-    <?php include '../styles/edit_profile.css';
+    <?php include '../styles/profile.css';
 
     ?>
     
@@ -117,7 +117,7 @@ $password = $_SESSION['password'];
                         <td></td>
                         <td>
                             <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Get Result</button>
                         </td>
                         <td></td>
 
@@ -134,8 +134,8 @@ $password = $_SESSION['password'];
 
         <hr>
 
-        <div class="result_section">
-            <table>
+        <div class="info">
+        <table class='main-table' style="margin-top: 0px;">
                 <?php
         session_start();
 
@@ -148,7 +148,7 @@ $password = $_SESSION['password'];
           $db_name = "db1";
           $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
 
-          echo $_POST['year'] . "    " . $_POST['semester'] . "     " . $_POST['session'];
+        //   echo $_POST['year'] . "    " . $_POST['semester'] . "     " . $_POST['session'];
           $email = $_SESSION['email'];
           $year = $_POST['year'];
           $semester = $_POST['semester'];
@@ -162,9 +162,9 @@ $password = $_SESSION['password'];
             $result = mysqli_query($conn, $sql);
             if (mysqli_query($conn, $sql)) {
               $row = mysqli_fetch_assoc($result);
-              echo "SUCCESS" . "<br>";
+            //   echo "SUCCESS" . "<br>";
 
-              echo $row['CSE_3000'];
+            //   echo $row['CSE_3000'];
               for ($i = 0; $i <= 9; $i++) {
                 $val = 'CSE-300' . "$i";
                 $val2 = 'CSE_300' . "$i";

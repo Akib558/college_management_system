@@ -84,7 +84,7 @@ body {
   .main-table{
     width: 100%;
     table-layout: fixed ;
-  /* background-color: blue; */
+  background-color: #cddada;
   border-spacing: 20px 2px;
   border-width: 10px;
   }
@@ -92,13 +92,13 @@ body {
     height: 100px;
   }
   
-  .main-table tr:nth-child(odd) {
+  /* .main-table tr:nth-child(odd) {
     background-color: #a1aaaa;
   }
   
   .main-table tr:nth-child(even) {
     background-color: hsl(0, 0%, 99%);
-  }
+  } */
   .main-table td{
     margin: 10px;
     /* background-color: red; */
@@ -109,6 +109,17 @@ body {
     font-weight: bold;
    
   }
+
+  input.larger {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* Might want to wrap a span around your checkbox text */
+
+
+
+
 
   .sub_btn{
     margin: 40px;
@@ -121,3 +132,22 @@ body {
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

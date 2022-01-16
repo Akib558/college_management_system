@@ -78,7 +78,7 @@ tr{
 <div class="content">
 <div id="navbar">
 
-<a href="tem_teacher_education.php">Get Info</a>
+<a style="background-color: #2bff00;" href="tem_teacher_education.php">Get Info</a>
             <a href="tem_teacher_education_2.php">Update Info</a>
 
            
@@ -205,7 +205,7 @@ tr{
                 
 
                 echo "
-            <button type='button' class='collapsible'>$student_email</button>
+            <button type='button' class='collapsible kk-btn'><p class='kk'>$student_email</p></button>
             <div class='content2'>
                 <table class='demo_table'>
                 <tr>

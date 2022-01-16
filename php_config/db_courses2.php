@@ -67,6 +67,7 @@
             // }
             $count++;
         }
+        echo $count;
         header("Location: ../templates/tem_courses_2.php?signup=success");
         
 

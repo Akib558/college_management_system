@@ -77,16 +77,16 @@ tr{
 <div id="navbar">
 
 <a href="tem_admin_notice.php">Notices</a>
-            <a href="tem_admin_notice_2.php">Edit Notice</a>
+            <a style="background-color: #2bff00;" href="tem_admin_notice_2.php">Edit Notice</a>
             <a href="tem_admin_notice_3.php">Add Notice</a>
             <a href="tem_admin_notice_4.php">Delete Notice</a>
         </div>
     <div class="new_content">
 
     <form action="tem_admin_notice_2.php" method="POST">
-      <input type="text" name="board_id">
+      <input type="text" name="board_id" placeholder="Notice Id">
       <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Get Notice</button>
       </form>
       <hr>
 
@@ -144,7 +144,7 @@ tr{
                    
                 </table>
 
-                <button type='submit' class='sub_btn' name='REGISTER'>REGISTER</button>
+                <button type='submit' class='sub_btn' name='REGISTER'>Update Notice</button>
             </form>
           
         </div>

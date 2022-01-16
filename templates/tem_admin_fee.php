@@ -102,7 +102,7 @@ tr{
     
 <div id="navbar">
             
-            <a href="tem_admin_fee.php">Get Info</a>
+            <a style="background-color: #2bff00;" href="tem_admin_fee.php">Get Info</a>
             <a href="tem_admin_fee_2.php">Update Info</a>
             <a href="tem_admin_fee_3.php">Add Month</a>
 
@@ -132,7 +132,7 @@ tr{
                         <td></td>
                         <td>
                             <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Get Info</button>
                         </td>
                         <td></td>
 
@@ -201,7 +201,7 @@ tr{
         $row = mysqli_fetch_assoc($result);
         $row2 = mysqli_fetch_assoc($result2);
 
-        echo "<table>
+        echo "<div class='info'><table class='main-table'>
         <tr>
         <td><u>Month</u></td>
         <td><u>Fee</u></td>
@@ -226,6 +226,7 @@ tr{
         }
 
        }
+       echo "</table></div>";
     }
 
 ?>

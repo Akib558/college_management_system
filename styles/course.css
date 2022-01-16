@@ -12,27 +12,31 @@
   }
   
   #navbar {
-  background-color: #46b3ce;
+  background-color: #46ce8a;
   position: fixed;
   /* top: -50px; */
-  height: 40px;
+  height: 42px;
   width: 100%;
-  display: block;
+  display: flex;
   transition: top 0.3s;
   text-align: center;
   align-items: center;
+  /* color: black; */
   }
   
   #navbar a {
   /* float: left; */
   /* display: block; */
-  color: #f2f2f2;
+  /* color: #f2f2f2; */
+  color: black;
   /* height: 100px; */
   text-align: center;
-  padding: 15px;
+  padding: 13px;
+  /* margin-top: 10px; */
   text-decoration: none;
   font-size: 17px;
-  }
+display: block;  
+}
   
   #navbar a:hover {
   background-color: #ddd;

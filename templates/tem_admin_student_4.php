@@ -79,13 +79,13 @@ tr{
             <a href="tem_admin_student.php">Student Info</a>
             <a href="tem_admin_student_2.php">Edit Student</a>
             <a href="tem_admin_student_3.php">Add Student</a>
-            <a href="tem_admin_student_4.php">Remove Student</a>
+            <a style="background-color: #2bff00;" href="tem_admin_student_4.php">Remove Student</a>
 
         </div>
     <div class="new_content">
 
     <form action="tem_admin_student_4.php" method="POST">
-      <input type="text" name="student_id">
+      <input type="text" name="student_id" placeholder="Student Id">
       <button style="margin-top: 50px;" type="submit" class="sub_btn"
                                 name="REGISTER">REGISTER</button>
       <!-- <button type="submit" class="sub_btn" name="search">SEARCH</button> -->
@@ -105,17 +105,26 @@ tr{
             
             $value = $_POST['student_id'];
 
-            $sql = "delete from reg where student_id='$value'";
-
-            if(mysqli_query($conn, $sql))
-            {
             
-                echo "SUCCESS";
+            $sql = "select * from reg where student_id='$value';";
+            $result = mysqli_query($conn, $sql);
+            $count = mysqli_num_rows($result);
+
+
+            
+            if($count > 0)
+            {
+              $sql = "delete from reg where student_id='$value'";
+              if(mysqli_query($conn,$sql))
+              {
+                echo "<p style='color:green'><b> Student with ID $value Removed </b></p>";
+              }
+                
             
             }
             else{
-            echo "ERROR : ".mysqli_error($conn);
-            }
+            echo "<p style='color:red'><b> There is not Student with ID $value </b></p>";
+          }
 
         
         

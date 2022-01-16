@@ -37,29 +37,30 @@
 
 <div class="content">
     
-  <div class="pic">
-    <div class="pic-in">
-      <img id="my-img" src="/home/akib/Pictures/Screenshot from 2021-10-02 16-37-05.png" alt="">
-    </div>
-    <hr>
-  </div>
+
   <div class="info">
     <table class="main-table">
-      <tr>NAME</tr>
       <tr>
         <?php
          
-          echo "<td>$teacher_id</td><td>$teacher_name</td>" 
+          echo "<td colspan='2'>$teacher_id</td>";
         ?>
         
       </tr>
+
       <tr>
-        <?php echo "<td>$teacher_phone</td><td>$teacher_dept</td>" ?>
+        <?php
+          echo "<td colspan='2'>$teacher_name</td>";
+        ?>
+      </tr>
+
+      <tr>
+        <?php echo "<td>$teacher_phone</td><td>$teacher_dept</td>"; ?>
 
       </tr>
     
       <tr>
-      <?php echo "<td>$teacher_email</td><td>$teacher_password</td>" ?>
+      <?php echo "<td>$teacher_email</td><td>$teacher_password</td>"; ?>
 
       </tr>
       <tr></tr>

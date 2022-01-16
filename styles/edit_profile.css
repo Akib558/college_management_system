@@ -33,7 +33,7 @@ body {
   .content {
     margin-left: 200px;
     padding: 1px 16px;
-    height: 1000px;
+    height: 100%;
     background-color: rgb(215, 221, 210);
   }
   
@@ -93,7 +93,70 @@ body {
   }
 
   input{
-      height: 30px;
-      font-size: 20px;
+      
+  }
+
+  .info{
+    text-align: center;
+    margin: 50px;
+  margin-top: 10%;
+  }
+  
+  .main-table{
+    width: 100%;
+    table-layout: fixed ;
+  /* background-color: blue; */
+  border-spacing: 20px 2px;
+  border-width: 10px;
+  }
+  .main-table tr{
+    height: 100px;
+  }
+  
+  .main-table tr:nth-child(odd) {
+    background-color: #a1aaaa;
+  }
+  
+  .main-table tr:nth-child(even) {
+    background-color: hsl(0, 0%, 99%);
+  }
+  .main-table td{
+    margin: 10px;
+    /* background-color: red; */
+    font-size:30px;
+  }
+  input{
+      width: 95%;
+      background-color: green;
+      border: 0;
+      height: 100%;
+   
+      font-size: 30px;
       text-align: center;
   }
+
+  input[type="text"], textarea {
+
+    background-color : #d1d1d100; 
+  
+  }
+
+  .sub_btn{
+    margin: 40px;
+    width: 30%;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(39, 146, 189);
+    border-radius: 20px;
+  }
+
+ .kk{
+   text-align: center;
+   font-size: 20px;
+ }
+ .kk-btn{
+   margin: 2px;
+   border-radius: 20px;
+ }
+

@@ -91,7 +91,7 @@ tr{
 
             <a href="tem_admin_edu.php">Get Info</a>
             <a href="tem_admin_edu_2.php">Update Info</a>
-            <a href="tem_admin_edu_3.php">Insert New Student</a>
+            <a style="background-color: #2bff00;" href="tem_admin_edu_3.php">Insert New Student</a>
 
            
         </div>
@@ -144,8 +144,10 @@ session_start();
     }
 
     echo "
+    <div class='info'>
+
               <form action='../php_config/db_admin_edu_3.php' method='POST'>
-              <table>";
+              <table class='main-table'>";
               for($i = 0; $i < count($course_name); $i++)
               {
                 $pp = $course_name[$i];
@@ -247,9 +249,9 @@ session_start();
               echo "
               <tr>
              
-                      <td><button style='margin-top: 50px;' type='submit' class='sub_btn'
-                      name='REGISTER'>REGISTER</button></td>
-                      <td></td>
+                      <td colspan='2'><button style='margin-top: 50px;' type='submit' class='sub_btn'
+                      name='REGISTER'>Add Student</button></td>
+                      
                     </tr>
               </table>
              

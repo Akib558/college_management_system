@@ -81,13 +81,13 @@ tr{
 
             <a href="tem_admin_student.php">Student Info</a>
             <a href="tem_admin_student_2.php">Edit Student</a>
-            <a href="tem_admin_student_3.php">Add Student</a>
+            <a style="background-color: #2bff00;" href="tem_admin_student_3.php">Add Student</a>
             <a href="tem_admin_student_4.php">Remove Student</a>
 
         </div>
-    <div class="new_content">
+    <div class="info">
     <form action="../php_config/db_admin_student_3.php" method="POST">
-        <table>
+        <table class="main-table">
           <tr>
             <td><input type="text" id="login" class="input_1" name="reg_f_name" placeholder="First Name"></td>
             <td><input type="text" id="login" class="input_1" name="reg_l_name" placeholder="Last Name"></td>
@@ -105,8 +105,8 @@ tr{
             <td><input type="text" id="password" class="input_1" name="reg_pass" placeholder="Password"></td>
           </tr>
           <tr>
-            <td><input type="text" id="login" class="input_1" name="student_id" placeholder="Student ID"></td>
-            <td></td>
+            <td colspan='2'><input type="text" id="login" class="input_1" name="student_id" placeholder="Student ID"></td>
+       
           </tr>
         </table>
 
@@ -116,7 +116,7 @@ tr{
 				
 				
 				<!-- <input type="submit" class="fadeIn fourth" value="REGISTER"> -->
-				<button type="submit" class="sub_btn" name="REGISTER">REGISTER</button>
+				<button type="submit" class="sub_btn" name="REGISTER">Add Student</button>
 			</form>
 
 

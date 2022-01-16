@@ -18,6 +18,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 <?php include '../styles/profile.css'; ?>
+
+
 </style>
 </head>
 <body>
@@ -34,15 +36,22 @@
 
 <div class="content">
     
-  <div class="pic">
+  <!-- <div class="pic">
     <div class="pic-in">
       <img id="my-img" src="/home/akib/Pictures/Screenshot from 2021-10-02 16-37-05.png" alt="">
     </div>
     <hr>
-  </div>
+  </div> -->
   <div class="info">
     <table class="main-table">
-      <tr>NAME</tr>
+      <!-- <tr>NAME</tr> -->
+      <tr colspan='2'>
+        <?php
+         
+          echo "<td colspan='2'>$fname&nbsp$lname</td>" 
+        ?>
+        
+      </tr>
       <tr>
         <?php
          

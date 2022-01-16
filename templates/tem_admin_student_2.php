@@ -77,7 +77,7 @@ tr{
 <div id="navbar">
 
             <a href="tem_admin_student.php">Student Info</a>
-            <a href="tem_admin_student_2.php">Edit Student</a>
+            <a style="background-color: #2bff00;" href="tem_admin_student_2.php">Edit Student</a>
             <a href="tem_admin_student_3.php">Add Student</a>
             <a href="tem_admin_student_4.php">Remove Student</a>
 
@@ -85,9 +85,9 @@ tr{
     <div class="new_content">
 
     <form action="tem_admin_student_2.php" method="POST">
-      <input type="text" name="student_id">
+      <input type="text" name="student_id" placeholder="Student Id">
       <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Get Info</button>
       <!-- <button type="submit" class="sub_btn" name="search">SEARCH</button> -->
 
   </form>
@@ -155,13 +155,13 @@ tr{
                                 placeholder='$student_password' value='$student_password'></td>
                     </tr>
                     <tr>
-                        <td><input type='text' id='login' class='input_1' name='student_id'
+                        <td colspan='2'><input type='text' id='login' class='input_1' name='student_id'
                                 placeholder='$student_id' value='$student_id'></td>
-                        <td></td>
+                     
                     </tr>
                 </table>
 
-                <button type='submit' class='sub_btn' name='REGISTER'>REGISTER</button>
+                <button type='submit' class='sub_btn' name='REGISTER'>Update Info</button>
             </form>
           
         </div>

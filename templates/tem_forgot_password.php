@@ -24,19 +24,20 @@
 </head>
 <body>
 
+
 <div class="main_div">
 		<div class="div2">
 
-			<p>LOG IN</p>
-			<form action="../php_config/db_login.php" method="POST">
-        <input type="text" class="input_1" name="login_email" placeholder="Email">
-        <input type="text"  class="input_1" name="login_pass" placeholder="Password">
-        <input type="submit" class="sub_btn" value="Log In">
-      </form>
-      <!-- <p><a href="../templates/tem_forgot_password.php" style="padding-top:10px" class="forgot_password">Forgot Password</a> </p> -->
-      <p>No account Yet?&nbsp;&nbsp;<a href="../templates/tem_reg.php">Create account</a></p> 
+			<p>Forgot Password</p>
+			<form action="../php_config/db_forgot_password.php" method="POST">
+        <input type="text" class="input_1" name="email" placeholder="Email">
+        <!-- <input type="submit" class="sub_btn" value="Log In" style="margin-top: 10px;"> -->
+        <button type="submit" class="sub_btn" name="REGISTER" style="margin-top: 10px;">Get Link</button>
 
-			<!-- <p>Already have an account?&nbsp;&nbsp;<a href="../templates/tem_login.php">Login</a></p>  -->
+      </form>
+    
+
+			<p>Remembered Password?&nbsp;&nbsp;<a href="../templates/tem_login.php">Login</a></p> 
 
 		
 

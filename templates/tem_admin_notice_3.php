@@ -78,7 +78,7 @@ tr{
 
             <a href="tem_admin_notice.php">Notices</a>
             <a href="tem_admin_notice_2.php">Edit Notice</a>
-            <a href="tem_admin_notice_3.php">Add Notice</a>
+            <a style="background-color: #2bff00;" href="tem_admin_notice_3.php">Add Notice</a>
             <a href="tem_admin_notice_4.php">Delete Notice</a>
 
 
@@ -111,7 +111,7 @@ tr{
                    
                 </table>
 
-                <button type='submit' class='sub_btn' name='REGISTER'>REGISTER</button>
+                <button type='submit' class='sub_btn' name='REGISTER'>Add Notice</button>
             </form>
           
         </div>

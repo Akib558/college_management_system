@@ -210,11 +210,12 @@ margin-right: 15px;
 
 #sec-1{
   padding-top: 0px;
+  background-color: white;
 }
-#sec-2{
+/* #sec-2{
   padding-top: 0px;
   margin-bottom: 0px;
-}
+} */
 #sec-3{
   
   background-color: #68a8a500;
@@ -234,7 +235,7 @@ margin-right: 15px;
 
 #navbar {
 /* background-color: #46b3ce; */
-background-color: red;
+background-color: rgb(59, 182, 135);
 
 position: fixed;
 top: -50px;

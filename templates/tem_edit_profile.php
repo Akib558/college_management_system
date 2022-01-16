@@ -21,6 +21,7 @@ $password = $_SESSION['password'];
     <style>
     <?php include '../styles/edit_profile.css';
     ?>
+    
     </style>
 </head>
 
@@ -37,12 +38,12 @@ $password = $_SESSION['password'];
     </div>
 
     <div class="content">
-        <div class="pic">
+        <!-- <div class="pic">
             <div class="pic-in">
                 <img id="my-img" src="/home/akib/Pictures/Screenshot from 2021-10-02 16-37-05.png" alt="">
             </div>
             <hr>
-        </div>
+        </div> -->
         <div class="info">
             <form action="../php_config/db_edit_profile.php" method="POST">
                 <table class="main-table">
@@ -79,7 +80,7 @@ $password = $_SESSION['password'];
 
 
                 <!-- <input type="submit" class="fadeIn fourth" value="REGISTER"> -->
-                <button type="submit" class="sub_btn" name="REGISTER">REGISTER</button>
+                <button type="submit" class="sub_btn" name="REGISTER">UPDATE</button>
             </form>
             <!-- <p>Name</p>
     <p>Department</p>

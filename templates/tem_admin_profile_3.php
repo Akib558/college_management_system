@@ -44,10 +44,10 @@
 <div id="navbar">
             <a href="tem_admin_profile.php">Teachers Info</a>
             <a href="tem_admin_profile_2.php">Edit Teachers</a>
-            <a href="tem_admin_profile_3.php">Add Teacher</a>
+            <a style="background-color: #2bff00;" href="tem_admin_profile_3.php">Add Teacher</a>
             <a href="tem_admin_profile_4.php">Remove Teacher</a>
             <a href="tem_admin_profile_5.php">Add Courses to Teacher</a>
-
+            <a  href="tem_admin_profile_6.php">Remove Courses from Teacher</a>
 
         
         </div>
@@ -80,7 +80,7 @@
                 
                 </table>
 
-                <button type='submit' class='sub_btn' name='REGISTER'>REGISTER</button>
+                <button type='submit' class='sub_btn' name='REGISTER'>Add Teacher</button>
 
     </form>
 

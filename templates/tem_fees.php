@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fees</title>
     <style>
-<?php include '../styles/edit_profile.css'; ?>
+<?php include '../styles/profile.css'; ?>
 <?php include '../styles/course.css';?>
 
 
@@ -53,6 +53,10 @@ tr{
 </div>
 
 <div class="content">
+
+<div>
+
+
 
 
 <table class="main_table">
@@ -141,6 +145,6 @@ tr{
 
 </div>
 
-
+</div>
 </body>
 </html>

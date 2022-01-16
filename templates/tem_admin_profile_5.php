@@ -42,12 +42,13 @@
 <div class="content">
     
 <div id="navbar">
-<a href="tem_admin_profile.php">Teachers Info</a>
+            <a href="tem_admin_profile.php">Teachers Info</a>
             <a href="tem_admin_profile_2.php">Edit Teachers</a>
-            <a href="tem_admin_profile_3.php">Add</a>
+            <a href="tem_admin_profile_3.php">Add Teacher</a>
             <a href="tem_admin_profile_4.php">Remove Teacher</a>
-            <a href="tem_admin_profile_5.php">Add Courses to Teacher</a>
-            <a href="tem_admin_profile_6.php">Remove Courses from Teacher</a>
+            <a style="background-color: #2bff00;" href="tem_admin_profile_5.php">Add Courses to Teacher</a>
+            <a  href="tem_admin_profile_6.php">Remove Courses from Teacher</a>
+
         
         </div>
     
@@ -58,7 +59,7 @@
       <input type="text" name="course_id" placeholder="Course ID">
 
       <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Add Course</button>
       <!-- <button type="submit" class="sub_btn" name="search">SEARCH</button> -->
 
   </form>
@@ -79,19 +80,26 @@
         $value = $_POST['teacher_id'];
         $value2 = $_POST['course_id'];
 
-        $sql = "insert into teacher_courses(teacher_course_name, teacher_id) values ('$value2', '$value');";
-
-
-
-
-        if(mysqli_query($conn, $sql))
+        
+        $sql = "select * from teacher_info where teacher_id='$value';";
+        $result = mysqli_query($conn,$sql);
+        $count = mysqli_num_rows($result);
+        
+        
+        if($count > 0)
         {
           
-            echo "SUCCESS";
+          $sql = "insert into teacher_courses(teacher_course_name, teacher_id) values ('$value2', '$value');";
+          if(mysqli_query($conn,$sql))
+          {
+            echo "<P style='color: green'>Course with Id :$value2 added to Teacher with Id : $value </p>";
+
+          }
           
         }
         else{
-          echo "ERROR : ".mysqli_error($conn);
+          echo "<P style='color: red'><b> No Teacher with Id : $value </b></p>";
+          
         }
 
 

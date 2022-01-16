@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses</title>
     <style>
-    <?php include '../styles/edit_profile.css';?>
+    <?php include '../styles/tem_course_2.css';?>
     <?php include '../styles/course.css';?>
     
     td {
@@ -15,12 +15,12 @@
         text-align: center;
     }
 
-    .cl1 {
-        background-color: blue;
+    .cl2 {
+        background-color: gray;
     }
 
-    .cl2 {
-        background-color: orange;
+    .cl1 {
+        background-color: hsl(0, 0%, 86%);
     }
     </style>
 </head>
@@ -42,7 +42,7 @@
 
         <div id="navbar">
             <a href="tem_courses.php">Enrolled Courses</a>
-            <a href="tem_courses_2.php">Edit Courese</a>
+            <a style="background-color: #2bff00;" href="tem_courses_2.php">Edit Courese</a>
             <a href="tem_courses_3.php">All Courses</a>
         </div>
 
@@ -85,7 +85,7 @@
                         while ($row = mysqli_fetch_assoc($result)) {
                             $val = $row['course_title'];
 
-                            echo "<tr class='cl2'><td><p><input type='checkbox' value=$val name =$count checked><label for=$count>$val</label></p></td></tr>";
+                            echo "<tr class='cl2'><td><p><input type='checkbox' class='larger' value=$val name =$count checked><label for=$count>$val</label></p></td></tr>";
 
                             $count++;
                         }
@@ -101,7 +101,7 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $val = $row['course_title'];
 
-                                echo "<tr class='cl1'><td><p><input type='checkbox' value=$val name =$count><label for=$count>$val</label></p></td></tr>";
+                                echo "<tr class='cl1'><td><p><input type='checkbox' class='larger' value=$val name =$count><label for=$count>$val</label></p></td></tr>";
 
                                 $count++;
                             }
@@ -117,7 +117,7 @@
                         while ($row = mysqli_fetch_assoc($result)) {
                             $val = $row['course_title'];
 
-                            echo "<tr class='cl1'><td><p><input type='checkbox' value=$val name =$count><label for=$count>$val</label></p></td></tr>";
+                            echo "<tr class='cl1'><td><p><input type='checkbox' class='larger' value=$val name =$count><label for=$count>$val</label></p></td></tr>";
 
                             $count++;
                         }

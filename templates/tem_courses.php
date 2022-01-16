@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses</title>
     <style>
-    <?php include '../styles/edit_profile.css';
+    <?php include '../styles/profile.css';
     ?><?php include '../styles/course.css';
     ?>
     </style>
@@ -28,14 +28,16 @@
 
 
         <div id="navbar">
-            <a href="tem_courses.php">Enrolled Courses</a>
+            <a style="background-color: #2bff00;" href="tem_courses.php">Enrolled Courses</a>
             <a href="tem_courses_2.php">Edit Courese</a>
             <a href="tem_courses_3.php">All Courses</a>
         </div>
 
-        <div class="course_info">
+        <div class="info">
 
-            <table class="main_table">
+        
+
+            <table class="main-table">
 
 
 
@@ -63,7 +65,7 @@
         if (mysqli_query($conn, $sql)) {
 
           echo "
-    <tr>
+    <tr class='table_head'>
       <td>COURSES</td>
       <td>TEACHER NAME</td>
     </tr>";

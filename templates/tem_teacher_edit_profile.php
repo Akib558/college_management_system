@@ -74,11 +74,17 @@ if(mysqli_query($conn,$sql))
     <table class='main-table'>
         <tr>
 
-            <td><input type='text' id='login' class='input_1' name='teacher_id'
+            <td colspan='2'><input type='text' id='login' class='input_1' name='teacher_id'
                     placeholder='$teacher_id' value='$teacher_id'></td>
-            <td><input type='text' id='login' class='input_1' name='teacher_name'
-                    placeholder='$teacher_name' value='$teacher_name'></td>
+            
         </tr>
+
+        <tr>
+        <td colspan='2'><input type='text' id='login' class='input_1' name='teacher_name'
+        placeholder='$teacher_name' value='$teacher_name'></td>
+
+        </tr>
+
         <tr>
             <td><input type='text' id='login' class='input_1' name='teacher_phone'
                     placeholder='$teacher_phone' value='$teacher_phone'></td>
@@ -95,7 +101,7 @@ if(mysqli_query($conn,$sql))
 
     </table>
 
-    <button type='submit' class='sub_btn' name='REGISTER'>REGISTER</button>
+    <button type='submit' class='sub_btn' name='REGISTER'>Update</button>
 </form>
 
 </div>

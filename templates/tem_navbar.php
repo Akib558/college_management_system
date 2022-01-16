@@ -28,10 +28,10 @@
 <section id="sec-11"></section>
 
 <div id="navbar">
-    <a href="#sec-11" style="padding-left: 10px; color: white;">Intro</a>
-    <a href="#sec-22" style="padding-left: 40px; color: white;">Preictions</a>
-    <a href="#sec-3" style="padding-left: 40px; color: white;">How to use</a>
-    <a href="#sec-4" style="padding-left: 40px; color: white;">Helps</a>
+    <a href="#sec-1" style="padding-left: 10px; color: white;">Home</a>
+    <a href="#sec-2" style="padding-left: 40px; color: white;">Notice</a>
+    <!-- <a href="#sec-3" style="padding-left: 40px; color: white;">How to use</a> -->
+    <!-- <a href="#sec-4" style="padding-left: 40px; color: white;">Helps</a> -->
 </div>
       
 
@@ -88,12 +88,12 @@
 <!-- <div class="clear_div"></div> -->
 
 <section id="sec-0">
-    <div class="my_nav" style="background-color: #46b3ce; height: 50px; width: 100%; text-align: center; margin: 0;">
+    <div class="my_nav" style="background-color: #47d88f; height: 50px; width: 100%; text-align: center; margin: 0;">
         <div style="padding-top: 12px;">
         
-            <a href="#sec-11" style="padding-left: 10px; color: white;">Home</a>
-            <a href="#sec-22" style="padding-left: 40px; color: white;">Academic</a>
-            <a href="#sec-3" style="padding-left: 40px; color: white;">Notice Board</a>
+            <a href="#sec-1" style="padding-left: 10px; color: white;">Home</a>
+            <!-- <a href="#sec-" style="padding-left: 40px; color: white;">Academic</a> -->
+            <a href="#sec-2" style="padding-left: 40px; color: white;">Notice Board</a>
         
         </div>
         </div>

@@ -76,7 +76,7 @@ tr{
     
 <div id="navbar">
 
-            <a href="tem_admin_student.php">Student Info</a>
+            <a style="background-color: #2bff00;" href="tem_admin_student.php">Student Info</a>
             <a href="tem_admin_student_2.php">Edit Student</a>
             <a href="tem_admin_student_3.php">Add Student</a>
             <a href="tem_admin_student_4.php">Remove Student</a>
@@ -101,7 +101,7 @@ tr{
       if(mysqli_query($conn, $sql))
       {
           $result = mysqli_query($conn, $sql);
-          echo "SUCCESS";
+          // echo "SUCCESS";
           while($row = mysqli_fetch_assoc($result))
           {
             $student_fname = $row['fname'];
@@ -130,7 +130,7 @@ tr{
             
 
             echo "
-            <button type='button' class='collapsible'>$student_fname &nbsp $student_lname</button>
+            <button type='button' class='collapsible kk-btn'><p class='kk'>$student_fname &nbsp $student_lname</p></button>
             <div class='content2'>
                 <table class='demo_table'>
                 <tr>

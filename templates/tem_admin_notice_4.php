@@ -79,15 +79,15 @@ tr{
 <a href="tem_admin_notice.php">Notices</a>
             <a href="tem_admin_notice_2.php">Edit Notice</a>
             <a href="tem_admin_notice_3.php">Add Notice</a>
-            <a href="tem_admin_notice_4.php">Delete Notice</a>
+            <a style="background-color: #2bff00;" href="tem_admin_notice_4.php">Delete Notice</a>
 
         </div>
     <div class="new_content">
 
     <form action="tem_admin_notice_4.php" method="POST">
-      <input type="text" name="board_id">
+      <input type="text" name="board_id" placeholder="Notice Id">
       <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Remove Norice</button>
       </form>
       <hr>
 
@@ -105,21 +105,26 @@ tr{
             
             $value = $_POST['board_id'];
 
-            $sql = "delete from board where board_id='$value'";
-
-
-
-
-            if(mysqli_query($conn, $sql))
+            
+            $sql = "select * from board where board_id='$value';";
+            $result = mysqli_query($conn, $sql);
+            $count = mysqli_num_rows($result);
+            
+            
+            
+            if($count > 0)
             {
+              $sql = "delete from board where board_id='$value';";
+              if(mysqli_query($conn,$sql))
+              {
+                echo "<p style='color:green'><b> Notice with ID $value Removed </b></p>";
+              }
                 
-                echo "SUCCESS";
-                
+            
             }
             else{
-                echo "ERROR : ".mysqli_error($conn);
-            }
-
+            echo "<p style='color:red'><b> There is not Notice with ID $value </b></p>";
+          }
 
 
             
