@@ -9,7 +9,7 @@
   $address = $_SESSION['address'];
   $email = $_SESSION['email'];
   $password = $_SESSION['password'];
-  
+  $student_id = $_SESSION['student_id'];
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +45,13 @@
   <div class="info">
     <table class="main-table">
       <!-- <tr>NAME</tr> -->
+      <tr colspan='2'>
+        <?php
+         
+          echo "<td colspan='2'>$student_id</td>" 
+        ?>
+        
+      </tr>
       <tr colspan='2'>
         <?php
          

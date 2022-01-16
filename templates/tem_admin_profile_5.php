@@ -84,17 +84,49 @@
         $sql = "select * from teacher_info where teacher_id='$value';";
         $result = mysqli_query($conn,$sql);
         $count = mysqli_num_rows($result);
-        
-        
+
+        $row = mysqli_fetch_assoc($result);
+
+        $teacher_name = $row['teacher_name'];
+      
+
         if($count > 0)
         {
-          
-          $sql = "insert into teacher_courses(teacher_course_name, teacher_id) values ('$value2', '$value');";
-          if(mysqli_query($conn,$sql))
-          {
-            echo "<P style='color: green'>Course with Id :$value2 added to Teacher with Id : $value </p>";
+          $gg = substr($value2, 0, strpos($value2, "-"));
+          //echo $gg;
 
+          $sql = "select * from course where course_title='$value2' and teacher_name = '$teacher_name' and department = '$gg';";
+
+          $result = mysqli_query($conn,$sql);
+          $count = mysqli_num_rows($result);
+
+          if($count == 0)
+          {
+            $sql = "insert into course (course_title,teacher_name,department) values ('$value2', '$teacher_name', '$gg');";
+
+            if(mysqli_query($conn,$sql))
+            {
+              $gg = "success";
+            }
           }
+
+          $sql = "select * from teacher_courses where teacher_course_name = '$value2' and teacher_id = '$value';";
+          $result = mysqli_query($conn,$sql);
+          $count = mysqli_num_rows($result);
+
+          if($count == 0)
+          {
+            $sql = "insert into teacher_courses(teacher_course_name, teacher_id) values ('$value2', '$value');";
+            if(mysqli_query($conn,$sql))
+            {
+              echo "<P style='color: green'>Course with Id :$value2 added to Teacher with Id : $value $gg</p>";
+  
+            }
+          }
+
+
+
+          
           
         }
         else{

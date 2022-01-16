@@ -46,6 +46,10 @@
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  /* width: 50%; */
 }
 
 .demo_table{
@@ -64,6 +68,13 @@ tr{
    
 <?php
  include 'tem_navbar.php';
+
+  $ss = "student5";
+
+  $gg = str_replace("student","",$ss);
+  $gg = "student".(string)((int)$gg+1);
+  echo $gg;
+
 ?>
 
     

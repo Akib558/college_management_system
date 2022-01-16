@@ -187,8 +187,52 @@ $password = $_SESSION['password'];
             } else {
               echo "Error: " . mysqli_error($conn);
             }
-          } else {
-            echo "not success";
+          } 
+          else if($department == 'EEE')
+          {
+            $sql = "select * from education_eee where student_email='$email' and year='$year' and semester='$semester' and session='$session';";
+
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_query($conn, $sql)) {
+              $row = mysqli_fetch_assoc($result);
+            //   echo "SUCCESS" . "<br>";
+
+            //   echo $row['CSE_3000'];
+              for ($i = 0; $i <= 9; $i++) {
+                $val = 'EEE-300' . "$i";
+                $val2 = 'EEE_300' . "$i";
+                $val2 = $row[$val2];
+                echo "<tr>
+                        <td>$val</td>
+                        <td>$val2</td>
+                      </tr>";
+              }
+
+              for ($i = 10; $i <= 21; $i++) {
+                $val = 'EEE-30' . "$i";
+                $val2 = 'EEE_30' . "$i";
+                $val2 = $row[$val2];
+                echo "<tr>
+                        <td>$val</td>
+                        <td>$val2</td>
+                      </tr>";
+              }
+            } else {
+              echo "Error: " . mysqli_error($conn);
+            }
+
+
+
+
+
+
+
+
+
+          }
+
+          else {
+            echo "<p style='color:red;'><b>No Result Avaliable</b></p>";
           }
         }
 

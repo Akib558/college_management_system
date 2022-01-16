@@ -47,7 +47,7 @@ display: block;
   .course_info{
       height: 100%;
       margin-top: 40px;
-      background-color: red;
+      /* background-color: red; */
   }
 
   .main_table{

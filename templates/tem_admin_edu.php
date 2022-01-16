@@ -234,8 +234,14 @@ tr{
             }
 
             $sql = "select * from education_cse where student_email='$email' and year='$year' and semester='$semester' and session='$session';";
+
+            $result = mysqli_query($conn, $sql);
+            $count = mysqli_num_rows($result);
+            $row = mysqli_fetch_assoc($result);
+
+
             
-            if(mysqli_query($conn,$sql))
+            if($count > 0)
             {
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
@@ -265,9 +271,66 @@ tr{
           }
           else if($department == "EEE")
           {
-              echo "education eee";
+
+
+            $sql = "show columns from education_eee";
+            $course_name = array();
+
+            if(mysqli_query($conn, $sql))
+            {
+              $result = mysqli_query($conn, $sql);
+              $i = 0;
+              while($row = mysqli_fetch_assoc($result))
+              {
+                  if($i >= 4)
+                  {
+                    array_push($course_name,$row['Field']);
+                  }
+                  $i++;
+              }
+            }
+            else{
+              echo "ERROR : ".mysqli_error($conn);
+            }
+
+            $sql = "select * from education_eee where student_email='$email' and year='$year' and semester='$semester' and session='$session';";
+            $result = mysqli_query($conn, $sql);
+            $count = mysqli_num_rows($result);
+            $row = mysqli_fetch_assoc($result);
+
+
+
+            if($count > 0)
+            {
+              
+              echo "<div class='info'><table class='main-table'>";
+              for($i = 0; $i < count($course_name); $i++)
+              {
+                $pp = $course_name[$i];
+                $pp2 = $row[$pp];
+                  echo "
+                    <tr>
+                      <td>$pp</td>
+                      <td>$pp2</td>
+                    </tr>
+                  
+                  ";
+              }
+              echo "</table></div>";
+            }
+            else{
+              // echo "ERROR IS GETIING RESULT FROM education_cse";
+            echo "<p style='color:red;'><b>No Result Avaliable</b></p>";
+
+            }
+
+              
+
+
+
           }
           else{
+            
             echo "NO SUCH DEPARTMENT or styudent";
           }
 

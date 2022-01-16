@@ -107,7 +107,7 @@ tr{
         $value = $_POST['student_id'];
 
         // $sql = "select * from teacher_info where teacher_id='$value'";
-        $sql = "select * from reg where position='student'";
+        $sql = "select * from reg where position='student' and student_id = '$value';";
 
         if(mysqli_query($conn, $sql))
         {

@@ -26,6 +26,11 @@ if(isset($_POST['REGISTER']))
 
     if(mysqli_query($conn, $sql))
     {
+        $sql = "insert into fee (student_email) values ('$email');";
+        mysqli_query($conn,$sql);
+        $sql = "insert into dues (student_email) values ('$email');";
+        mysqli_query($conn,$sql);
+
         echo "SUCCESS";
         header("Location: ../templates/tem_admin_student.php");
         

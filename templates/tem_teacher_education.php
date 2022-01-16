@@ -189,8 +189,9 @@ tr{
 
         // echo "<br>".$sql_eee;
 
-
-        if(mysqli_query($conn, $sql_cse))
+        if($course_name[0])
+        {
+          if(mysqli_query($conn, $sql_cse))
         {
             $result = mysqli_query($conn, $sql_cse);
             // echo "SUCCESS";
@@ -222,6 +223,8 @@ tr{
                 {
                     $bb = $course_name[$i];
                     $bb2 = $row[$course_name[$i]];
+                    $bb = strtoupper($bb);
+
                     echo "
                     <tr colspan='2'>
                     <td>Subject : $bb</td>
@@ -239,6 +242,76 @@ tr{
         else{
             echo "ERROR : ".mysqli_error($conn);
         }
+          
+        }
+
+
+        
+
+
+        if($course_name2[0])
+        {
+          if(mysqli_query($conn, $sql_eee))
+        {
+            $result = mysqli_query($conn, $sql_eee);
+            // echo "SUCCESS";
+            while($row = mysqli_fetch_assoc($result))
+            {
+                $student_email = $row['student_email'];
+                $year = $row['year'];
+                $semester = $row['semester'];
+                $session = $row['session'];
+                $department = $row['department'];
+
+                
+
+                echo "
+            <button type='button' class='collapsible kk-btn'><p class='kk'>$student_email</p></button>
+            <div class='content2'>
+                <table class='demo_table'>
+                <tr>
+                  <td>Year : $year</td>
+                  <td>Semester : $semester</td>
+                </tr>
+                <tr>
+                  <td>Session : $session</td>
+                  <td>Department : $department</td>
+                </tr>
+                <tr>";
+
+                for($i = 0; $i < count($course_name2); $i++)
+                {
+                    $bb = $course_name2[$i];
+                    $bb2 = $row[$course_name2[$i]];
+                    $bb = strtoupper($bb);
+                    echo "
+                    <tr colspan='2'>
+                    <td>Subject : $bb</td>
+                    <td>Grade : $bb2</td>
+                  </tr>
+                    ";
+                }
+
+                echo"
+              </table></div>";
+
+
+            }
+        }
+        else{
+            echo "ERROR : ".mysqli_error($conn);
+            echo $sql_eee;  
+        }
+        }
+
+        
+
+
+
+
+
+
+
 
 
 
@@ -258,54 +331,6 @@ tr{
         echo $sql;
     }
 
-
-     
-
-    //   if(mysqli_query($conn, $sql))
-    //   {
-    //       $result = mysqli_query($conn, $sql);
-    //       echo "SUCCESS";
-    //       while($row = mysqli_fetch_assoc($result))
-    //       {
-    //         $teacher_id = $row['teacher_id'];
-    //         $teacher_name = $row['teacher_name'];
-    //         $teacher_phone = $row['teacher_phone'];
-    //         $teacher_dept = $row['teacher_dept'];
-
-    //         $sql2 = "select * from teacher_courses where teacher_id = '$teacher_id'";
-    //         $course = array();
-
-    //         $result2 = mysqli_query($conn,$sql2);
-    //         while($row2 = mysqli_fetch_assoc($result2))
-    //         {
-    //           array_push($course, $row2['teacher_course_name']);
-    //         }
-            
-
-    //         echo "
-    //         <button type='button' class='collapsible'>$teacher_name</button>
-    //         <div class='content2'>
-    //             <table class='demo_table'>
-    //             <tr>
-    //               <td>Teacher ID : $teacher_id</td>
-    //               <td>Teacher Name : $teacher_name</td>
-    //             </tr>
-    //             <tr>
-    //               <td>Teacher Phone : $teacher_phone</td>
-    //               <td>Teacher Department : $teacher_dept</td>
-    //             </tr>
-    //             <tr>
-    //           </table>";
-    //           echo "COURSES : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
-    //           for($i = 0; $i < count($course); $i++){echo strtoupper($course[$i])."&nbsp&nbsp&nbsp&nbsp&nbsp";}
-    //           echo "</div>";
-
-
-    //       }
-    //   }
-    //   else{
-    //     echo "ERROR : ".mysqli_error($conn);
-    //   }
   
   ?>
 

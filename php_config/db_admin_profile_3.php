@@ -26,6 +26,7 @@
             {
                 echo "SUCCESS";
                 // $_SESSION['tem_value'] = 1;
+                // $sql = "insert into fee (student_email) values ('$');"
                 header("Location: ../templates/tem_admin_profile.php");
                 
             }

@@ -123,7 +123,7 @@ tr{
 
             echo "
         
-            <button type='button' class='collapsible kk-btn'><p class='kk'>$teacher_name</p></button>
+            <button type='button' class='collapsible kk-btn'><p class='kk'>$teacher_id</p></button>
             <div class='content2'>
                 <table class='demo_table'>
                 <tr>

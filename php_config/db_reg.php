@@ -28,10 +28,25 @@ if(isset($_POST['REGISTER'])){
     }
     else
     {
-      $sql = "insert into reg(fname, lname, department, section, blood_group, address, email, password) values ('$fname', '$lname', '$department', '$section', '$blood_group','$address', '$email', '$password');";
 
+      $sql = "SELECT student_id FROM reg ORDER BY student_id DESC LIMIT 1;";
+
+      $result = mysqli_query($conn,$sql);
+      $row = mysqli_fetch_assoc($result);
+      $ss = $row['student_id'];
+      $gg = str_replace("student","",$ss);
+      $gg = "student".(string)((int)$gg+1);
+
+      $sql = "insert into reg(fname, lname, department, section, blood_group, address, email, password, position, student_id ) values ('$fname', '$lname', '$department', '$section', '$blood_group','$address', '$email', '$password', 'student', '$gg');";
+
+      // echo $gg;
+      // echo $sql;
 
       if (mysqli_query($conn, $sql)) {
+        $sql = "insert into fee (student_email) values ('$email');";
+        mysqli_query($conn,$sql);
+        $sql = "insert into dues (student_email) values ('$email');";
+        mysqli_query($conn,$sql);
           header("Location: ../templates/tem_reg.php?signup=success");
       //   echo "New record created successfully";
       } else {

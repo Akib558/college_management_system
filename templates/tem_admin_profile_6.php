@@ -86,9 +86,40 @@
         $result = mysqli_query($conn,$sql);
         $count = mysqli_num_rows($result);
         
-        
+        $row = mysqli_fetch_assoc($result);
+
+        $teacher_name = $row['teacher_name'];
+
+
         if($count > 0)
         {
+
+          $gg = substr($value2, 0, strpos($value2, "-"));
+          //echo $gg;
+
+          $sql = "select * from course where course_title='$value2' and teacher_name = '$teacher_name' and department = '$gg';";
+
+          // echo $sql;
+
+          $result = mysqli_query($conn,$sql);
+          $count = mysqli_num_rows($result);
+
+          if($count >= 0)
+          {
+            $sql = "delete from course where course_title = '$value2' and teacher_name = '$teacher_name' and department = '$gg';";
+
+            if(mysqli_query($conn,$sql))
+            {
+              $gg = "success";
+            }
+          }
+
+
+
+
+          // echo $gg;
+
+
           
           $sql = "delete from teacher_courses where teacher_course_name='$value2' and teacher_id='$value';";
           if(mysqli_query($conn,$sql)){
@@ -99,7 +130,7 @@
           
         }
         else{
-          echo "<P style='color: red'><b> No Teacher with Id : $value </b></p>";
+          echo "<P style='color: red'><b> No Teacher with Id : $value</b></p>";
 
         }
 

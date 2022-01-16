@@ -87,7 +87,7 @@ tr{
     <form action="tem_admin_student_4.php" method="POST">
       <input type="text" name="student_id" placeholder="Student Id">
       <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">REGISTER</button>
+                                name="REGISTER">Remove Student</button>
       <!-- <button type="submit" class="sub_btn" name="search">SEARCH</button> -->
 
   </form>

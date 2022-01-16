@@ -58,7 +58,10 @@
         $department = $_SESSION['department'];
         $pp = str_ireplace(array('@', '.'), '_', $name);
 
-        $sql = "select * from course where course_title in (select course_title from $pp) and department='$department';";
+        // $sql = "select * from course where course_title in (select course_title from $pp) and department='$department';";
+        $sql = "select * from teacher_courses where teacher_course_name in (select course_title from $pp);";
+
+        // echo $sql;
 
         $result = mysqli_query($conn, $sql);
 
@@ -67,11 +70,11 @@
           echo "
     <tr class='table_head'>
       <td>COURSES</td>
-      <td>TEACHER NAME</td>
+      <td>TEACHER ID</td>
     </tr>";
 
           while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr><td>" . $row['course_title'] . "</td><td>" . $row['teacher_name'] . "</td></tr>";
+            echo "<tr><td>" . $row['teacher_course_name'] . "</td><td>" . $row['teacher_id'] . "</td></tr>";
           }
         } else {
 

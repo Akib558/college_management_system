@@ -55,17 +55,50 @@
         $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
         $department = $_SESSION['department'];
 
-        $sql = "select * from course where department='$department';";
+ 
+
+
+
+
+        ### working
+
+        // $sql = "select * from course where department='$department';";
+        // $result = mysqli_query($conn, $sql);
+
+        // if (mysqli_query($conn, $sql)) {
+
+        //   while ($row = mysqli_fetch_assoc($result)) {
+        //     echo "<tr ><td>" . $row['course_title'] . "</td><td>" . $row['teacher_name'] . "</td></tr>";
+        //   }
+        // } else {
+        //   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        // }
+
+          ### new ############
+
+        $sql = "select * from teacher_courses;";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_query($conn, $sql)) {
 
           while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr ><td>" . $row['course_title'] . "</td><td>" . $row['teacher_name'] . "</td></tr>";
+
+            $course_name = $row['teacher_course_name'];
+            $teacher_id = $row['teacher_id'];
+            $gg = $course_name;
+           $gg2 = substr($gg, 0, strpos($gg, "-"));
+            if($gg2 == $department)
+            {
+              echo "<tr ><td>$course_name</td><td>$teacher_id</td></tr>";
+
+            }
           }
         } else {
           echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
+
+
+
 
         ?>
 

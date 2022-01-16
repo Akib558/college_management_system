@@ -50,6 +50,9 @@
 
 
     $sql = "select * from course where teacher_name='$teacher_name'";
+
+    // $sql = "select * from teacher_courses where teacher_id = '$teacher_id';";
+
     // echo $sql;
     if(mysqli_query($conn,$sql))
     {

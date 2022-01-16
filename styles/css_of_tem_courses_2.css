@@ -54,26 +54,7 @@ body {
     }
   }
   
-  
-  .pic{
-    width: 100%;
-  
-  }
-  
-  .pic-in{
-  
-    margin: 0 auto;
-    width: 200px;
-    height: 200px;
-  
-  }
-  
-  #my-img{
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-  
-  }
+
   
   .info{
     text-align: center;
@@ -84,24 +65,17 @@ body {
   .main-table{
     width: 100%;
     table-layout: fixed ;
-  /* background-color: #cddada; */
   border-spacing: 20px 2px;
   border-width: 10px;
   }
+  
   .main-table tr{
     height: 100px;
   }
-  
-  /* .main-table tr:nth-child(odd) {
-    background-color: #a1aaaa;
-  }
-  
-  .main-table tr:nth-child(even) {
-    background-color: hsl(0, 0%, 99%);
-  } */
+
+
   .main-table td{
     margin: 10px;
-    /* background-color: red; */
     font-size:30px;
   }
 
@@ -114,7 +88,7 @@ body {
     width: 30px;
     height: 30px;
   }
-  
+/*   */
   /* Might want to wrap a span around your checkbox text */
 
 

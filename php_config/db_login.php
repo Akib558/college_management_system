@@ -47,6 +47,7 @@ $address = $row_data['address'];
 $email = $row_data['email'];
 $password = $row_data['password'];
 $position = $row_data['position'];
+$student_id = $row_data['student_id'];
 
 $_SESSION['fname'] = $fname;
 $_SESSION['lname'] = $lname;
@@ -57,6 +58,7 @@ $_SESSION['address'] = $address;
 $_SESSION['email'] = $email;
 $_SESSION['password'] = $password;
 $_SESSION['position'] = $position;
+$_SESSION['student_id'] = $student_id;
 
 $_SESSION['valid'] = 1;
 echo "SUCCESS22222<br>";

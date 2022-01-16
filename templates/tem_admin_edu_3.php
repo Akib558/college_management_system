@@ -128,6 +128,7 @@ session_start();
 
     $sql = "show columns from education_cse";
     $course_name = array();
+    $course_name2 = array();
 
     if(mysqli_query($conn, $sql))
     {
@@ -142,6 +143,26 @@ session_start();
     else{
         echo "ERROR : ".mysqli_error($conn);
     }
+
+
+    $sql = "show columns from education_eee";
+    if(mysqli_query($conn, $sql))
+    {
+        $result = mysqli_query($conn, $sql);
+        $i = 0;
+        while($row = mysqli_fetch_assoc($result))
+        {
+            array_push($course_name2,$row['Field']);
+        
+        }
+    }
+    else{
+        echo "ERROR : ".mysqli_error($conn);
+    }
+
+
+
+
 
     echo "
     <div class='info'>
@@ -246,6 +267,33 @@ session_start();
                 }
                   
               }
+ 
+##################### eee
+
+              for($i = 0; $i < count($course_name2); $i++)
+              {
+                $pp = $course_name2[$i];
+                $pp2 = $row[$pp];
+               
+                if($i > 4){
+                    echo "
+                    <tr>
+                      <td>$pp</td>
+                      <td><input type='text' style='width: 100%' placeholder='Grade' value='Unenrolled' name='$pp'>
+                      </td>
+                    </tr>
+                  
+                  ";
+                }
+                  
+              }
+
+
+
+
+
+
+
               echo "
               <tr>
              

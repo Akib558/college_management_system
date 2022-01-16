@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses</title>
     <style>
-    <?php include '../styles/tem_course_2.css';?>
+    <?php include '../styles/css_of_tem_courses_2.css';?>
     <?php include '../styles/course.css';?>
     
     td {
@@ -85,7 +85,7 @@
                         while ($row = mysqli_fetch_assoc($result)) {
                             $val = $row['course_title'];
 
-                            echo "<tr class='cl2'><td><p><input type='checkbox' class='larger' value=$val name =$count checked><label for=$count>$val</label></p></td></tr>";
+                            echo "<tr class='cl2' ><td><p><input type='checkbox' class='larger' value=$val name =$count checked><label for=$count>$val</label></p></td></tr>";
 
                             $count++;
                         }

@@ -335,41 +335,48 @@ $db_servername = "localhost";
             if(strtoupper($department) == 'CSE')
             {
 
-                $sql = $sql_cse;                
-
-                if(mysqli_query($conn,$sql))
+                if($course_name[0])
                 {
-                  $result = mysqli_query($conn, $sql);
-                  $row = mysqli_fetch_assoc($result);
-                  echo "
-                  <div class='info'>
-                  <form action='../php_config/db_teacher_education_2.php' method='POST'>
-                  <table class='main-table'>";
-                  for($i = 0; $i < count($course_name); $i++)
-                  {
-                        $pp = $course_name[$i];
-                        $pp2 = $row[$pp];
-                        $pp = strtoupper($pp);
+
+                    $sql = $sql_cse;                
+
+                    if(mysqli_query($conn,$sql))
+                    {
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_assoc($result);
+                      echo "
+                      <div class='info'>
+                      <form action='../php_config/db_teacher_education_2.php' method='POST'>
+                      <table class='main-table'>";
+                      for($i = 0; $i < count($course_name); $i++)
+                      {
+                            $pp = $course_name[$i];
+                            $pp2 = $row[$pp];
+                            $pp = strtoupper($pp);
+                            echo "
+                            <tr>
+                            <td>$pp</td>
+                            <td colspan='2'><input type='text' style='width: 100%' placeholder='$pp2' value='$pp2' name='$pp'>
+                            </td>
+                            </tr>
+                        
+                                ";
+                        }
+    
                         echo "
-                        <tr>
-                        <td>$pp</td>
-                        <td colspan='2'><input type='text' style='width: 100%' placeholder='$pp2' value='$pp2' name='$pp'>
-                        </td>
-                        </tr>
-                    
-                            ";
+                        <tr >
+                               
+                               <td colspan='3'><button style='margin-top: 50px;' type='submit' class='sub_btn'
+                               name='REGISTER'>Update</button></td>
+                               
+                             </tr>
+                            </table></form></div>
+                        ";
                     }
 
-                    echo "
-                    <tr >
-                           
-                           <td colspan='3'><button style='margin-top: 50px;' type='submit' class='sub_btn'
-                           name='REGISTER'>Update</button></td>
-                           
-                         </tr>
-                        </table></form></div>
-                    ";
                 }
+
+               
  
 
 
@@ -379,6 +386,50 @@ $db_servername = "localhost";
             }
             else if(strtoupper($department) == "EEE")
             {
+
+
+                if($course_name2[0])
+                {
+
+                    $sql = $sql_eee;                
+
+                    if(mysqli_query($conn,$sql))
+                    {
+                      $result = mysqli_query($conn, $sql);
+                      $row = mysqli_fetch_assoc($result);
+                      echo "
+                      <div class='info'>
+                      <form action='../php_config/db_teacher_education_2.php' method='POST'>
+                      <table class='main-table'>";
+                      for($i = 0; $i < count($course_name2); $i++)
+                      {
+                            $pp = $course_name2[$i];
+                            $pp2 = $row[$pp];
+                            $pp = strtoupper($pp);
+                            echo "
+                            <tr>
+                            <td>$pp</td>
+                            <td colspan='2'><input type='text' style='width: 100%' placeholder='$pp2' value='$pp2' name='$pp'>
+                            </td>
+                            </tr>
+                        
+                                ";
+                        }
+    
+                        echo "
+                        <tr >
+                               
+                               <td colspan='3'><button style='margin-top: 50px;' type='submit' class='sub_btn'
+                               name='REGISTER'>Update</button></td>
+                               
+                             </tr>
+                            </table></form></div>
+                        ";
+                    }
+
+                }
+
+
 
             }
             else{

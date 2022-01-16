@@ -33,7 +33,7 @@
   background-color: #777;
   color: white;
   cursor: pointer;
-  padding: 18px;
+  padding: 8px;
   width: 100%;
   border: none;
   text-align: left;
@@ -50,6 +50,10 @@
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  /* width: 50%; */
 }
 
 .demo_table{
@@ -59,6 +63,9 @@
 tr{
   text-align: center;
 }
+.main-table tr{
+    height: 50px;
+  }
 
     </style>
 </head>
