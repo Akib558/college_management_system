@@ -65,27 +65,4 @@ else{
 
 
 
-
-// $sql2 = "select * from reg";
-// $result = mysqli_query($conn, $sql2);
-// $result_check = mysqli_num_rows($result);
-
-
-
-// if($result_check > 0)
-// {
-//   while($row = mysqli_fetch_assoc($result))
-//   {
-//     echo $row['name']."  ".$row['email'].' '.$row['password']."<br>";
-//   }
-// }
-// else
-// {
-//   header("Location: ../templates/tem_reg.php?signup=success");
-
-//   // echo "unsccess";
-// }
-
-
-
 ?>

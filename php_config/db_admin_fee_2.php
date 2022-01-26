@@ -140,68 +140,7 @@ $sql= "insert into dues( student_email, ";
 
 
 
-
-
-
-
-
-
-
-
-
-// if(mysqli_query($conn,$sql))
-// {
-//     $sql= "insert into fee( student_email ";
-//     for($i = 0; $i < count($course_name)-1; $i++)
-//     {
-//         $sql = $sql.$course_name[$i].',';
-//     }
-//     $sql = $sql.$course_name[count($course_name)-1].") values (";
-
-//     for($i = 0; $i < count($post_value)-1; $i++)
-//     {
-//         $sql = $sql."'".$post_value[$i]."',";
-//     }
-
-//     $sql = $sql."'".$post_value[count($post_value)-1]."');";
-
-//     if(mysqli_query($conn,$sql))
-//     {
-//         echo "SUCCESS";
-//         header("Location: ../templates/tem_admin_edu.php");
-        
-//     }
-//     else{
-//         echo "ERROR2 : ".mysqli_error($conn)."<br>".$sql;
-//     }
-
-    
-
-
-// }
-// else{
-//     echo "ERROR3 : ".mysqli_error($conn);
-// }
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

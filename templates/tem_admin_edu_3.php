@@ -1,50 +1,52 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teacher_admin</title>
-<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher_admin</title>
+    <style>
     <?php include '../styles/edit_profile.css';
     ?><?php include '../styles/course.css';
-    ?>
 
-  .new_content{
-    /* background-color: red; */
-    margin-top: 50px;
-  }
+    ?>.new_content {
+        /* background-color: red; */
+        margin-top: 50px;
+    }
 
-  .collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
+    .collapsible {
+        background-color: #777;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
 
-.active, .collapsible:hover {
-  background-color: #555;
-}
+    .active,
+    .collapsible:hover {
+        background-color: #555;
+    }
 
-.content2 {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-}
+    .content2 {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+    }
 
-.demo_table{
-  width: 100%;
-  table-layout: fixed;
-}
-tr{
-  text-align: center;
-}
-.input_class {
+    .demo_table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    tr {
+        text-align: center;
+    }
+
+    .input_class {
         width: 100%;
         text-align: center;
         height: 30px;
@@ -70,37 +72,37 @@ tr{
         height: 5px;
         background-color: gray;
     }
-
     </style>
 </head>
+
 <body>
 
-<div class="sidebar">
-  <a href="tem_home.php">Home</a>
-  <a  href="tem_admin_profile.php">Teacher</a>
-  <a  href="tem_admin_student.php">Student</a>
-  <a  href="tem_admin_notice.php">Notice Board</a>
-  <a class="active" href="tem_admin_edu.php">Educational Records</a>
-  <a href="tem_admin_fee.php">Fees</a>
- 
-</div>
+    <div class="sidebar">
+        <a href="tem_home.php">Home</a>
+        <a href="tem_admin_profile.php">Teacher</a>
+        <a href="tem_admin_student.php">Student</a>
+        <a href="tem_admin_notice.php">Notice Board</a>
+        <a class="active" href="tem_admin_edu.php">Educational Records</a>
+        <a href="tem_admin_fee.php">Fees</a>
 
-<div class="content">
-    
-<div id="navbar">
+    </div>
+
+    <div class="content">
+
+        <div id="navbar">
 
             <a href="tem_admin_edu.php">Get Info</a>
             <a href="tem_admin_edu_2.php">Update Info</a>
             <a style="background-color: #2bff00;" href="tem_admin_edu_3.php">Insert New Student</a>
 
-           
+
         </div>
-    <div class="new_content">
+        <div class="new_content">
 
 
 
 
-<?php
+            <?php
 
 session_start();
 
@@ -314,8 +316,8 @@ session_start();
 
 
 
-              </div>
+        </div>
 
-              </body>
-              </html>
-              
+</body>
+
+</html>

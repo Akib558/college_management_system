@@ -14,34 +14,36 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teacher_admin</title>
-<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher_admin</title>
+    <style>
     <?php include '../styles/edit_profile.css';
     ?><?php include '../styles/course.css';
-    ?>
-    .new_content{
-    /* background-color: red; */
-    margin-top: 50px;
-  }
+
+    ?>.new_content {
+        /* background-color: red; */
+        margin-top: 50px;
+    }
     </style>
 </head>
+
 <body>
 
-<div class="sidebar">
-  <a href="tem_home.php">Home</a>
-  <a class="active" href="tem_admin_profile.php">Teacher</a>
-  <a href="tem_admin_student.php">Student</a>
-  <a href="tem_admin_notice.php">Notice Board</a>
-  <a href="tem_admin_edu.php">Educational Records</a>
-  <a href="tem_admin_fee.php">Fees</a>
- 
-</div>
+    <div class="sidebar">
+        <a href="tem_home.php">Home</a>
+        <a class="active" href="tem_admin_profile.php">Teacher</a>
+        <a href="tem_admin_student.php">Student</a>
+        <a href="tem_admin_notice.php">Notice Board</a>
+        <a href="tem_admin_edu.php">Educational Records</a>
+        <a href="tem_admin_fee.php">Fees</a>
 
-<div class="content">
-    
-<div id="navbar">
+    </div>
+
+    <div class="content">
+
+        <div id="navbar">
             <a href="tem_admin_profile.php">Teachers Info</a>
             <a href="tem_admin_profile_2.php">Edit Teachers</a>
             <a href="tem_admin_profile_3.php">Add Teacher</a>
@@ -49,23 +51,22 @@
             <a href="tem_admin_profile_5.php">Add Courses to Teacher</a>
             <a href="tem_admin_profile_6.php">Remove Courses from Teacher</a>
 
-        
+
         </div>
-    
-  <div class="new_content">
-    
-  <form action="tem_admin_profile_4.php" method="POST">
-      <input type="text" name="teacher_id" placeholder="Teacher Id">
-      <button style="margin-top: 50px;" type="submit" class="sub_btn"
-                                name="REGISTER">Remove Teacher</button>
-      <!-- <button type="submit" class="sub_btn" name="search">SEARCH</button> -->
 
-  </form>
+        <div class="new_content">
 
-  <hr>
+            <form action="tem_admin_profile_4.php" method="POST">
+                <input type="text" name="teacher_id" placeholder="Teacher Id">
+                <button style="margin-top: 50px;" type="submit" class="sub_btn" name="REGISTER">Remove Teacher</button>
+                <!-- <button type="submit" class="sub_btn" name="search">SEARCH</button> -->
+
+            </form>
+
+            <hr>
 
 
-  <?php
+            <?php
       if(isset($_POST['REGISTER']))
       {
         $_SESSION['tem_value'] = 1;
@@ -109,11 +110,11 @@
   ?>
 
 
-  </div>
+        </div>
 
-   
-</div>
+
+    </div>
 
 </body>
-</html>
 
+</html>

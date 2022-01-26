@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses</title>
     <style>
-    <?php include '../styles/css_of_tem_courses_2.css';?>
-    <?php include '../styles/course.css';?>
-    
-    td {
+    <?php include '../styles/css_of_tem_courses_2.css';
+    ?><?php include '../styles/course.css';
+
+    ?>td {
         /* background-color: blue; */
         text-align: center;
     }

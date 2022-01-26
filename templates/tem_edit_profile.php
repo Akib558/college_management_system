@@ -74,20 +74,9 @@ $password = $_SESSION['password'];
                     </tr>
                 </table>
 
-
-
-
-
-
-                <!-- <input type="submit" class="fadeIn fourth" value="REGISTER"> -->
                 <button type="submit" class="sub_btn" name="REGISTER">UPDATE</button>
             </form>
-            <!-- <p>Name</p>
-    <p>Department</p>
-    <p>section</p>
-    <p>roll</p>
-    <p>blood grouup</p>
-    <p>place</p> -->
+
         </div>
     </div>
 

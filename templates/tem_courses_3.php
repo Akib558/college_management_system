@@ -55,24 +55,6 @@
         $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
         $department = $_SESSION['department'];
 
- 
-
-
-
-
-        ### working
-
-        // $sql = "select * from course where department='$department';";
-        // $result = mysqli_query($conn, $sql);
-
-        // if (mysqli_query($conn, $sql)) {
-
-        //   while ($row = mysqli_fetch_assoc($result)) {
-        //     echo "<tr ><td>" . $row['course_title'] . "</td><td>" . $row['teacher_name'] . "</td></tr>";
-        //   }
-        // } else {
-        //   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        // }
 
           ### new ############
 

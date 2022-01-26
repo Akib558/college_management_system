@@ -60,11 +60,7 @@
                 }
 
             }
-            // else{
-            //     $course_name = $_POST[$count];
-            //     $sql = "insert into $name (course_title, status) values ($course_name, 'not_done')";
-            //     mysqli_query($conn, $sql);
-            // }
+
             $count++;
         }
         echo $count;
